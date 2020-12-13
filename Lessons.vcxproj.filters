@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Исходные файлы">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Исходные файлы\interfaces">
+      <UniqueIdentifier>{55edce41-59f0-403f-b04d-ed0e5a5596d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Classroom">
+      <UniqueIdentifier>{e0208fdd-cc53-445c-a440-bca9e1f4e2e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Classroom\SimpleClassroom">
+      <UniqueIdentifier>{85afb8b7-7cf3-421c-a2bc-23f21eec9172}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Teacher">
+      <UniqueIdentifier>{6c792676-f01d-4800-a49a-d47e37e0799e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Lesson">
+      <UniqueIdentifier>{94409c69-fb90-47c3-bba3-90d2790f4565}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Lesson\LessonInSchedule">
+      <UniqueIdentifier>{6d410e23-afb7-4942-9fc4-841cbe40fb62}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Teacher\TeacherName">
+      <UniqueIdentifier>{02c23578-a1aa-4f57-9e58-95d42a360f96}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Teacher\TeacherInitialsName">
+      <UniqueIdentifier>{b5b899fd-74c7-467a-b311-a176a35f62d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Subject">
+      <UniqueIdentifier>{6c4eb547-78db-4025-9ca9-7a4680a8113a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Classroom\SimpleClassroom\SimpleClassroom.cpp">
+      <Filter>Исходные файлы\Classroom\SimpleClassroom</Filter>
+    </ClCompile>
+    <ClCompile Include="interfaces\Classroom.h">
+      <Filter>Исходные файлы\interfaces</Filter>
+    </ClCompile>
+    <ClCompile Include="interfaces\Lesson.h">
+      <Filter>Исходные файлы\interfaces</Filter>
+    </ClCompile>
+    <ClCompile Include="interfaces\Teacher.h">
+      <Filter>Исходные файлы\interfaces</Filter>
+    </ClCompile>
+    <ClCompile Include="Lesson\LessonInSchedule\LessonInSchedule.cpp">
+      <Filter>Исходные файлы\Lesson\LessonInSchedule</Filter>
+    </ClCompile>
+    <ClCompile Include="Teacher\FullNameTeacher\TeacherName.cpp">
+      <Filter>Исходные файлы\Teacher\TeacherName</Filter>
+    </ClCompile>
+    <ClCompile Include="Teacher\InitialsNameTeacher\TeacherInitialsName.cpp">
+      <Filter>Исходные файлы\Teacher\TeacherInitialsName</Filter>
+    </ClCompile>
+    <ClCompile Include="Source.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Subject\SimpleSubject\SimpleSubject.cpp">
+      <Filter>Исходные файлы\Subject</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Classroom\SimpleClassroom\SimpleClassroom.h">
+      <Filter>Исходные файлы\Classroom\SimpleClassroom</Filter>
+    </ClInclude>
+    <ClInclude Include="Lesson\LessonInSchedule\LessonInSchedule.h">
+      <Filter>Исходные файлы\Lesson\LessonInSchedule</Filter>
+    </ClInclude>
+    <ClInclude Include="Teacher\FullNameTeacher\TeacherName.h">
+      <Filter>Исходные файлы\Teacher\TeacherName</Filter>
+    </ClInclude>
+    <ClInclude Include="Teacher\InitialsNameTeacher\TeacherInitialsName.h">
+      <Filter>Исходные файлы\Teacher\TeacherInitialsName</Filter>
+    </ClInclude>
+    <ClInclude Include="interfaces\Subject.h">
+      <Filter>Исходные файлы\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="Subject\SimpleSubject\SimpleSubject.h">
+      <Filter>Исходные файлы\Subject</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
