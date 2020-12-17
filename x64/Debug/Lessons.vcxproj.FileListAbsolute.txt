@@ -1,0 +1,2 @@
+D:\Programming\Projects\C++\LessonsSchedule\LessonSchedule\x64\Debug\Lessons.exe
+D:\Programming\Projects\C++\LessonsSchedule\LessonSchedule\x64\Debug\Lessons.pdb

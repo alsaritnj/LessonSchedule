@@ -5,9 +5,11 @@ class SimpleSubject : public Subject
 {
 public:
 	SimpleSubject(const std::string& subjectName, Teacher& teacher);
+	SimpleSubject(const SimpleSubject& other);
+	SimpleSubject(SimpleSubject&& other);
 	std::string getSubjectName() const override;
 	const Teacher& getTeacher() const override;
 protected:
-	std::string subjectName{};
-	Teacher& teacher;
+	const std::string subjectName{};
+	const Teacher& teacher;
 };

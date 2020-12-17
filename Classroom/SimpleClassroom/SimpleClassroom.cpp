@@ -1,11 +1,14 @@
 #include "SimpleClassroom.h"
 
-SimpleClassroom::SimpleClassroom(const short unsigned int& classroomNumber) : classroomNumber{classroomNumber}
-{
+SimpleClassroom::SimpleClassroom(const std::string& classroomNumber) :
+	classroomNumber{classroomNumber}
+{}
 
-}
+SimpleClassroom::SimpleClassroom(const short unsigned int& classroomNumber) :
+	classroomNumber{std::to_string(classroomNumber)}
+{}
 
-short unsigned int SimpleClassroom::getClassroomNumber() const 
+std::string SimpleClassroom::getClassroomNumber() const 
 {
 	return classroomNumber;
 }

@@ -140,21 +140,22 @@
   <ItemGroup>
     <ClCompile Include="Classroom\SimpleClassroom\SimpleClassroom.cpp" />
     <ClCompile Include="interfaces\Classroom.h" />
-    <ClCompile Include="interfaces\Lesson.h" />
     <ClCompile Include="interfaces\Teacher.h" />
-    <ClCompile Include="Lesson\LessonInSchedule\LessonInSchedule.cpp" />
+    <ClCompile Include="LessonInSchedule\SimpleLessonInSchedule\SimpleLessonInSchedule.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="Subject\SimpleSubject\SimpleSubject.cpp" />
-    <ClCompile Include="Teacher\FullNameTeacher\TeacherName.cpp" />
-    <ClCompile Include="Teacher\InitialsNameTeacher\TeacherInitialsName.cpp" />
+    <ClCompile Include="Teacher\TeacherInitialsName\TeacherInitialsName.cpp" />
+    <ClCompile Include="Teacher\TeacherName\TeacherName.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Classroom\SimpleClassroom\SimpleClassroom.h" />
+    <ClInclude Include="interfaces\DayFromSchedule.h" />
+    <ClInclude Include="interfaces\LessonInSchedule.h" />
     <ClInclude Include="interfaces\Subject.h" />
-    <ClInclude Include="Lesson\LessonInSchedule\LessonInSchedule.h" />
+    <ClInclude Include="LessonInSchedule\SimpleLessonInSchedule\SimpleLessonInSchedule.h" />
     <ClInclude Include="Subject\SimpleSubject\SimpleSubject.h" />
-    <ClInclude Include="Teacher\FullNameTeacher\TeacherName.h" />
-    <ClInclude Include="Teacher\InitialsNameTeacher\TeacherInitialsName.h" />
+    <ClInclude Include="Teacher\TeacherInitialsName\TeacherInitialsName.h" />
+    <ClInclude Include="Teacher\TeacherName\TeacherName.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

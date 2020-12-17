@@ -4,8 +4,9 @@
 class SimpleClassroom : public Classroom
 {
 public:
+	SimpleClassroom(const std::string& classroomNumber);
 	SimpleClassroom(const short unsigned int& classroomNumber);
-	short unsigned int getClassroomNumber() const override;
+	std::string getClassroomNumber() const override;
 protected:
-	short unsigned int classroomNumber{ 0 };
+	std::string classroomNumber{ };
 };
