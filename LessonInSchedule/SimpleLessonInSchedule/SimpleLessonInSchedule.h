@@ -10,9 +10,9 @@ public:
 	const Teacher& getTeacher() const;
 	std::string getSubjectName() const;
 	std::string getClassroomNumber() const;
-	short unsigned int getNumberInSchedule() const;
+	short unsigned int& numberInSchedule();
 protected:
 	const Subject& subject;
 	const Classroom& classroom;
-	unsigned short int numberInSchedule{};
+	unsigned short int _numberInSchedule{};
 };

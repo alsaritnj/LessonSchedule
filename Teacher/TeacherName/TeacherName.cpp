@@ -8,23 +8,21 @@ TeacherName::TeacherName(const std::string& surname, const std::string& name) :
 		throw std::exception("Name and surname can't be empty");
 }
 TeacherName::TeacherName(const std::string& surname, const std::string& name, const std::string& patronymic) :
-	TeacherName(surname, name)
+	TeacherName{ surname, name }
 {
 	if (patronymic == "" or patronymic == " ")
 		throw std::exception("Patronymic can't be empty");
-	this->patronymic =patronymic;
+	this->patronymic = { patronymic };
 }
 
 TeacherName::TeacherName(const TeacherName& other) :
 	name{other.name},
 	surname{other.surname},
-	patronymic{other.patronymic}
-{}
+	patronymic{other.patronymic}{}
 TeacherName::TeacherName(TeacherName&& other) :
-	name(other.name),
-	surname(other.surname),
-	patronymic(other.patronymic)
-{}
+	name{ std::move(other.name) },
+	surname{ std::move(other.surname) },
+	patronymic{ std::move(other.patronymic) }{}
 
 
 std::string TeacherName::getName() const { return name; }

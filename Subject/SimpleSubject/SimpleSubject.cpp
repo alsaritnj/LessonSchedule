@@ -1,8 +1,10 @@
 #include "SimpleSubject.h"
-
-SimpleSubject::SimpleSubject(const std::string& subjectName, Teacher& teacher) :
+                                                           //heare added "const"
+SimpleSubject::SimpleSubject(const std::string& subjectName, const Teacher& teacher) :
 	teacher{teacher},
 	subjectName{subjectName}
+	//я хз почему Teacher& принимался неконстантным, но все равно заменил на константный
+	//не уверен, что это не сломает что-то
 {}
 
 SimpleSubject::SimpleSubject(const SimpleSubject& other) :

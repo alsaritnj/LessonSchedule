@@ -1,0 +1,3 @@
+﻿  Source.cpp
+D:\Programming\Projects\С++\Lessons\Source.cpp(29,13): error C2440: <function-style-cast>: невозможно преобразовать "B" в "A"
+D:\Programming\Projects\С++\Lessons\Source.cpp(29,13): message : Ни один конструктор не смог принять исходный тип, либо разрешение перегрузки конструктора неоднозначно
