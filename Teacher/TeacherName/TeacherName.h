@@ -14,6 +14,9 @@ public:
 	std::string getName() const override;
 	std::string getSurname() const override;
 	std::string getPatronymic() const override;
+	void setName(const std::string& name) override;
+	void setSurname(const std::string& surname) override;
+	void setPatronymic(const std::string& patronymic) override;
 
 protected:
 	std::string name{};
