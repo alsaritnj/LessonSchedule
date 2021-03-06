@@ -43,6 +43,7 @@ void SimpleDayFromSchedule::del(const short int& numberOfLessonInSchedule)
 {
 	if (numberOfLessonInSchedule > lessonsInSchedule.size() + 1)
 		throw(std::exception("too large number of the lesson in the schedule"));
+	delete lessonsInSchedule[numberOfLessonInSchedule - 1];
 	lessonsInSchedule.erase(lessonsInSchedule.begin() + (numberOfLessonInSchedule - 1));
 }
 

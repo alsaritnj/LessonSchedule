@@ -12,7 +12,13 @@ using namespace std;
 
 int main()
 {
-	map<int, string> days
+	TeacherName t1("t1", "t1");
+	SimpleSubject subj("s", t1);
+	cout << subj.getTeacher().getName() << endl;
+	TeacherName t2("t2", "t2");
+	subj.setTeacher(t2);
+	cout << subj.getTeacher().getName() << endl;
+	/*map<int, string> days
 	{
 		pair<int, string>(1, "monday"),
 		pair<int, string>(2, "tuesday"),
@@ -48,7 +54,7 @@ int main()
 				sc[i][j].getTeacher().getSurname() << ' ' << sc[i][j].getTeacher().getName() << '\t' <<
 				sc[i][j].getClassroomNumber() << endl;
 		}
-	}
+	}*/
 
 	return 0;
 }
