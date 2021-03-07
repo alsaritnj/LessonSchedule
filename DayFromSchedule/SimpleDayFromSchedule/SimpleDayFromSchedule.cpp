@@ -29,25 +29,19 @@ const LessonInSchedule& SimpleDayFromSchedule::operator[](const short int& numbe
 
 void SimpleDayFromSchedule::add(LessonInSchedule* added)
 {
-	add(added, lessonsInSchedule.size() + 1);
-}
-
-void SimpleDayFromSchedule::add(LessonInSchedule* added, const unsigned& numberOfLessonInSchedule)
-{
-	if (numberOfLessonInSchedule > lessonsInSchedule.size() + 1)
-		throw(std::exception("too large number of the lesson in the schedule"));
-	lessonsInSchedule.emplace(lessonsInSchedule.begin() + (numberOfLessonInSchedule - 1), added);
+	for (const auto& el : lessonsInSchedule)
+		if (el->getNumberInSchedule() == added->getNumberInSchedule())
+			throw(std::exception("a lesson with the same number in the schedule as you tried to add already exists"));
+	lessonsInSchedule.emplace_back(added);
+	std::sort(this->lessonsInSchedule.begin(), this->lessonsInSchedule.end());
 }
 
 void SimpleDayFromSchedule::del(const short int& numberOfLessonInSchedule)
 {
 	if (numberOfLessonInSchedule > lessonsInSchedule.size() + 1)
-		throw(std::exception("too large number of the lesson in the schedule"));
+		throw(std::exception("Too large number of the lesson in the schedule"));
 	delete lessonsInSchedule[numberOfLessonInSchedule - 1];
 	lessonsInSchedule.erase(lessonsInSchedule.begin() + (numberOfLessonInSchedule - 1));
 }
 
-unsigned SimpleDayFromSchedule::countOfLessons() const
-{
-	return lessonsInSchedule.size();
-}
+unsigned SimpleDayFromSchedule::countOfLessons() const { return lessonsInSchedule.size(); }

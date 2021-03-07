@@ -12,7 +12,6 @@ public:
 	~SimpleDayFromSchedule();
 	const LessonInSchedule& operator[](const short int& numberOfLessonInSchedule) override;
 	void add(LessonInSchedule* added) override;
-	void add(LessonInSchedule* added, const unsigned& numberOfLessonInSchedule) override;
 	void del(const short int& numberOfLessonInSchedule) override;
 	unsigned countOfLessons() const override;
 

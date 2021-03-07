@@ -154,6 +154,7 @@
     <ClInclude Include="DayFromSchedule\SimpleDayFromSchedule\SimpleDayFromSchedule.h" />
     <ClInclude Include="interfaces\DayFromSchedule.h" />
     <ClInclude Include="interfaces\LessonInSchedule.h" />
+    <ClInclude Include="interfaces\Schedule.h" />
     <ClInclude Include="interfaces\Subject.h" />
     <ClInclude Include="LessonInSchedule\SimpleLessonInSchedule\SimpleLessonInSchedule.h" />
     <ClInclude Include="Schedule\FiveDaySchedule\FiveDaySchedule.h" />

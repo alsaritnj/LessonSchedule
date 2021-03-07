@@ -44,6 +44,9 @@
     <Filter Include="Исходные файлы\Schedule\FiveDaySchedule">
       <UniqueIdentifier>{86746ec0-4a1d-48e5-8b4b-d98d20817ce9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\Subject\SimpleSubject">
+      <UniqueIdentifier>{a31c6f14-25d1-4bc5-8ffe-6aead79799d4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Classroom\SimpleClassroom\SimpleClassroom.cpp">
@@ -57,9 +60,6 @@
     </ClCompile>
     <ClCompile Include="Source.cpp">
       <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Subject\SimpleSubject\SimpleSubject.cpp">
-      <Filter>Исходные файлы\Subject</Filter>
     </ClCompile>
     <ClCompile Include="Teacher\TeacherInitialsName\TeacherInitialsName.cpp">
       <Filter>Исходные файлы\Teacher\TeacherInitialsName</Filter>
@@ -76,6 +76,9 @@
     <ClCompile Include="Schedule\FiveDaySchedule\FiveDaySchedule.cpp">
       <Filter>Исходные файлы\Schedule\FiveDaySchedule</Filter>
     </ClCompile>
+    <ClCompile Include="Subject\SimpleSubject\SimpleSubject.cpp">
+      <Filter>Исходные файлы\Subject\SimpleSubject</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Classroom\SimpleClassroom\SimpleClassroom.h">
@@ -83,9 +86,6 @@
     </ClInclude>
     <ClInclude Include="interfaces\Subject.h">
       <Filter>Исходные файлы\interfaces</Filter>
-    </ClInclude>
-    <ClInclude Include="Subject\SimpleSubject\SimpleSubject.h">
-      <Filter>Исходные файлы\Subject</Filter>
     </ClInclude>
     <ClInclude Include="Teacher\TeacherInitialsName\TeacherInitialsName.h">
       <Filter>Исходные файлы\Teacher\TeacherInitialsName</Filter>
@@ -107,6 +107,12 @@
     </ClInclude>
     <ClInclude Include="Schedule\FiveDaySchedule\FiveDaySchedule.h">
       <Filter>Исходные файлы\Schedule\FiveDaySchedule</Filter>
+    </ClInclude>
+    <ClInclude Include="interfaces\Schedule.h">
+      <Filter>Исходные файлы\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="Subject\SimpleSubject\SimpleSubject.h">
+      <Filter>Исходные файлы\Subject\SimpleSubject</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
