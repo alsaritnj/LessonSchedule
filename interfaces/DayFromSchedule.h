@@ -1,8 +1,10 @@
 #pragma once
 #include "LessonInSchedule.h"
 #include <vector>
+#include "Observer.h"
+#include "Publisher.h"
 
-class DayFromSchedule
+class DayFromSchedule : public  Observer, Publisher
 {
 public:
 	virtual const LessonInSchedule& operator[](const short int& numberOfLessonInSchedule) = 0;

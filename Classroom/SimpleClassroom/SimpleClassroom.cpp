@@ -14,3 +14,9 @@ SimpleClassroom::SimpleClassroom(SimpleClassroom&& other):
 	classroomNumber(std::move(other.classroomNumber)){}
 
 std::string SimpleClassroom::getClassroomNumber() const { return classroomNumber; }
+
+void SimpleClassroom::notifySubscribers() const { publisher.notifySubscribers(); }
+
+void SimpleClassroom::subscribe(const Observer* observer) { publisher.subscribe(observer); }
+
+void SimpleClassroom::unsubscribe(const Observer* observer) { publisher.unsubscribe(observer); }

@@ -47,6 +47,12 @@
     <Filter Include="Исходные файлы\Subject\SimpleSubject">
       <UniqueIdentifier>{a31c6f14-25d1-4bc5-8ffe-6aead79799d4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\Classroom\EmptyClassroom">
+      <UniqueIdentifier>{2ea7eb32-5d1d-4102-ad08-3c9919844477}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Teacher\EmptyTeacher">
+      <UniqueIdentifier>{bf2cb237-8f1e-4547-b8db-057c21524c04}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Classroom\SimpleClassroom\SimpleClassroom.cpp">
@@ -78,6 +84,15 @@
     </ClCompile>
     <ClCompile Include="Subject\SimpleSubject\SimpleSubject.cpp">
       <Filter>Исходные файлы\Subject\SimpleSubject</Filter>
+    </ClCompile>
+    <ClCompile Include="PatternObserver\SimplePublisher\SimplePublisher.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Classroom\EmptyClassoom\EmptyClassroom.cpp">
+      <Filter>Исходные файлы\Classroom\EmptyClassroom</Filter>
+    </ClCompile>
+    <ClCompile Include="Teacher\EmptyTeacher\EmptyTeacher.cpp">
+      <Filter>Исходные файлы\Teacher\EmptyTeacher</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -113,6 +128,21 @@
     </ClInclude>
     <ClInclude Include="Subject\SimpleSubject\SimpleSubject.h">
       <Filter>Исходные файлы\Subject\SimpleSubject</Filter>
+    </ClInclude>
+    <ClInclude Include="interfaces\Observer.h">
+      <Filter>Исходные файлы\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="interfaces\Publisher.h">
+      <Filter>Исходные файлы\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="PatternObserver\SimplePublisher\SimplePublisher.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="Classroom\EmptyClassoom\EmptyClassroom.h">
+      <Filter>Исходные файлы\Classroom\EmptyClassroom</Filter>
+    </ClInclude>
+    <ClInclude Include="Teacher\EmptyTeacher\EmptyTeacher.h">
+      <Filter>Исходные файлы\Teacher\EmptyTeacher</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

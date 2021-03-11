@@ -1,7 +1,8 @@
 #pragma once
 #include <string>
+#include "Publisher.h"
 
-class Teacher
+class Teacher : public Publisher
 {
 public:
 	virtual std::string getName() const = 0;

@@ -1,9 +1,10 @@
 #pragma once
 #include "Subject.h"
 #include "Classroom.h"
+#include "Observer.h"
+#include "Publisher.h"
 
-
-class LessonInSchedule
+class LessonInSchedule : public Observer, Publisher
 {
 public:
 	virtual const Teacher& getTeacher() const = 0;

@@ -45,3 +45,13 @@ void SimpleDayFromSchedule::del(const short int& numberOfLessonInSchedule)
 }
 
 unsigned SimpleDayFromSchedule::countOfLessons() const { return lessonsInSchedule.size(); }
+
+void SimpleDayFromSchedule::notifySubscribers() const { publisher.notifySubscribers(); }
+
+void SimpleDayFromSchedule::subscribe(const Observer* observer) { publisher.subscribe(observer); }
+
+void SimpleDayFromSchedule::unsubscribe(const Observer* observer) { publisher.unsubscribe(observer); }
+
+void SimpleDayFromSchedule::notify() const
+{
+}

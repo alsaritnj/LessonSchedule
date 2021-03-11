@@ -1,8 +1,10 @@
 #pragma once
 #include <string>
 #include "Teacher.h"
+#include "Observer.h"
+#include "Publisher.h"
 
-class Subject
+class Subject : public Observer, Publisher
 {
 public:
 	virtual std::string getSubjectName() const = 0;

@@ -4,6 +4,7 @@
 #include <initializer_list>
 #include <algorithm>
 #include <exception>
+#include "../../PatternObserver/SimplePublisher/SimplePublisher.h"
 
 class SimpleDayFromSchedule : public DayFromSchedule
 {
@@ -14,7 +15,12 @@ public:
 	void add(LessonInSchedule* added) override;
 	void del(const short int& numberOfLessonInSchedule) override;
 	unsigned countOfLessons() const override;
+	void notifySubscribers() const override;
+	void subscribe(const Observer* observer) override;
+	void unsubscribe(const Observer* observer) override;
+	void notify() const override;
 
 protected:
 	std::vector<LessonInSchedule*> lessonsInSchedule{};
+	SimplePublisher publisher;
 };

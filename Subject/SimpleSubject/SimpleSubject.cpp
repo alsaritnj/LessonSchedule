@@ -16,6 +16,10 @@ const Teacher& SimpleSubject::getTeacher() const { return *teacher; }
 
 void SimpleSubject::setSubjectName(const std::string& subjectName) { this->subjectName = subjectName; }
 
-void SimpleSubject::setTeacher(Teacher& teacher) { this->teacher = &teacher; }
+void SimpleSubject::setTeacher(Teacher& teacher) 
+{ 
+	delete this->teacher;
+	this->teacher = &teacher; 
+}
 
 
