@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -138,29 +138,32 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Classroom\SimpleClassroom\SimpleClassroom.cpp" />
-    <ClCompile Include="DayFromSchedule\SimpleDayFromSchedule\SimpleDayFromSchedule.cpp" />
-    <ClCompile Include="interfaces\Classroom.h" />
-    <ClCompile Include="interfaces\Teacher.h" />
-    <ClCompile Include="LessonInSchedule\SimpleLessonInSchedule\SimpleLessonInSchedule.cpp" />
-    <ClCompile Include="Schedule\FiveDaySchedule\FiveDaySchedule.cpp" />
+    <ClCompile Include="ScheduleClasses\Classroom\SimpleClassroom\SimpleClassroom.cpp" />
+    <ClCompile Include="ScheduleClasses\DayFromSchedule\SimpleDayFromSchedule\SimpleDayFromSchedule.cpp" />
+    <ClCompile Include="ScheduleClasses\LessonInSchedule\SimpleLessonInSchedule\SimpleLessonInSchedule.cpp" />
+    <ClCompile Include="ScheduleClasses\Schedule\FiveDaySchedule\FiveDaySchedule.cpp" />
+    <ClCompile Include="ScheduleClasses\Subject\SimpleSubject\SimpleSubject.cpp" />
+    <ClCompile Include="ScheduleClasses\Teacher\TeacherInitialsName\TeacherInitialsName.cpp" />
+    <ClCompile Include="ScheduleClasses\Teacher\TeacherName\TeacherName.cpp" />
     <ClCompile Include="Source.cpp" />
-    <ClCompile Include="Subject\SimpleSubject\SimpleSubject.cpp" />
-    <ClCompile Include="Teacher\TeacherInitialsName\TeacherInitialsName.cpp" />
-    <ClCompile Include="Teacher\TeacherName\TeacherName.cpp" />
+    <ClCompile Include="UserInterface\UserInterface\ConsoleUserInterface\ConsoleUserInterface.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Classroom\SimpleClassroom\SimpleClassroom.h" />
-    <ClInclude Include="DayFromSchedule\SimpleDayFromSchedule\SimpleDayFromSchedule.h" />
-    <ClInclude Include="interfaces\DayFromSchedule.h" />
-    <ClInclude Include="interfaces\LessonInSchedule.h" />
-    <ClInclude Include="interfaces\Schedule.h" />
-    <ClInclude Include="interfaces\Subject.h" />
-    <ClInclude Include="LessonInSchedule\SimpleLessonInSchedule\SimpleLessonInSchedule.h" />
-    <ClInclude Include="Schedule\FiveDaySchedule\FiveDaySchedule.h" />
-    <ClInclude Include="Subject\SimpleSubject\SimpleSubject.h" />
-    <ClInclude Include="Teacher\TeacherInitialsName\TeacherInitialsName.h" />
-    <ClInclude Include="Teacher\TeacherName\TeacherName.h" />
+    <ClInclude Include="ScheduleClasses\Classroom\SimpleClassroom\SimpleClassroom.h" />
+    <ClInclude Include="ScheduleClasses\DayFromSchedule\SimpleDayFromSchedule\SimpleDayFromSchedule.h" />
+    <ClInclude Include="ScheduleClasses\interfaces\Classroom.h" />
+    <ClInclude Include="ScheduleClasses\interfaces\DayFromSchedule.h" />
+    <ClInclude Include="ScheduleClasses\interfaces\LessonInSchedule.h" />
+    <ClInclude Include="ScheduleClasses\interfaces\Schedule.h" />
+    <ClInclude Include="ScheduleClasses\interfaces\Subject.h" />
+    <ClInclude Include="ScheduleClasses\interfaces\Teacher.h" />
+    <ClInclude Include="ScheduleClasses\LessonInSchedule\SimpleLessonInSchedule\SimpleLessonInSchedule.h" />
+    <ClInclude Include="ScheduleClasses\Schedule\FiveDaySchedule\FiveDaySchedule.h" />
+    <ClInclude Include="ScheduleClasses\Subject\SimpleSubject\SimpleSubject.h" />
+    <ClInclude Include="ScheduleClasses\Teacher\TeacherInitialsName\TeacherInitialsName.h" />
+    <ClInclude Include="ScheduleClasses\Teacher\TeacherName\TeacherName.h" />
+    <ClInclude Include="UserInterface\interface\UserInterface.h" />
+    <ClInclude Include="UserInterface\UserInterface\ConsoleUserInterface\ConsoleUserInterface.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

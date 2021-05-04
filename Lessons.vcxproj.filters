@@ -5,114 +5,138 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;c++;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="Исходные файлы\interfaces">
-      <UniqueIdentifier>{55edce41-59f0-403f-b04d-ed0e5a5596d3}</UniqueIdentifier>
+    <Filter Include="Исходные файлы\ScheduleClasses">
+      <UniqueIdentifier>{b5780c77-767e-4e0a-a50a-ffa75b9d0698}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Исходные файлы\Classroom">
+    <Filter Include="Исходные файлы\ScheduleClasses\Classroom">
       <UniqueIdentifier>{e0208fdd-cc53-445c-a440-bca9e1f4e2e3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Исходные файлы\Classroom\SimpleClassroom">
+    <Filter Include="Исходные файлы\ScheduleClasses\Classroom\SimpleClassroom">
       <UniqueIdentifier>{85afb8b7-7cf3-421c-a2bc-23f21eec9172}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Исходные файлы\Teacher">
-      <UniqueIdentifier>{6c792676-f01d-4800-a49a-d47e37e0799e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Исходные файлы\Teacher\TeacherName">
-      <UniqueIdentifier>{02c23578-a1aa-4f57-9e58-95d42a360f96}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Исходные файлы\Teacher\TeacherInitialsName">
-      <UniqueIdentifier>{b5b899fd-74c7-467a-b311-a176a35f62d3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Исходные файлы\Subject">
-      <UniqueIdentifier>{6c4eb547-78db-4025-9ca9-7a4680a8113a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Исходные файлы\LessonInSchedule">
-      <UniqueIdentifier>{ba2f4926-a273-450c-b6aa-9bc6bd134588}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Исходные файлы\LessonInSchedule\SimpleLessonInSchedule">
-      <UniqueIdentifier>{c23b51b4-b9bc-4302-ac7d-5f1a21c15cdc}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Исходные файлы\DayFromSchedule">
+    <Filter Include="Исходные файлы\ScheduleClasses\DayFromSchedule">
       <UniqueIdentifier>{167ca7b7-ced3-4e5e-9ebd-ac75263fc61c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Исходные файлы\DayFromSchedule\SimpleDayFromSchedule">
+    <Filter Include="Исходные файлы\ScheduleClasses\DayFromSchedule\SimpleDayFromSchedule">
       <UniqueIdentifier>{2e8625f8-53d2-4f95-9f42-108eafe253f2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Исходные файлы\Schedule">
+    <Filter Include="Исходные файлы\ScheduleClasses\interfaces">
+      <UniqueIdentifier>{55edce41-59f0-403f-b04d-ed0e5a5596d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\ScheduleClasses\LessonInSchedule">
+      <UniqueIdentifier>{ba2f4926-a273-450c-b6aa-9bc6bd134588}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\ScheduleClasses\LessonInSchedule\SimpleLessonInSchedule">
+      <UniqueIdentifier>{c23b51b4-b9bc-4302-ac7d-5f1a21c15cdc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\ScheduleClasses\Schedule">
       <UniqueIdentifier>{fec25008-1c78-4135-8874-59d33722f6b5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Исходные файлы\Schedule\FiveDaySchedule">
+    <Filter Include="Исходные файлы\ScheduleClasses\Schedule\FiveDaySchedule">
       <UniqueIdentifier>{86746ec0-4a1d-48e5-8b4b-d98d20817ce9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Исходные файлы\Subject\SimpleSubject">
+    <Filter Include="Исходные файлы\ScheduleClasses\Subject">
+      <UniqueIdentifier>{6c4eb547-78db-4025-9ca9-7a4680a8113a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\ScheduleClasses\Subject\SimpleSubject">
       <UniqueIdentifier>{a31c6f14-25d1-4bc5-8ffe-6aead79799d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\ScheduleClasses\Teacher">
+      <UniqueIdentifier>{6c792676-f01d-4800-a49a-d47e37e0799e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\ScheduleClasses\Teacher\TeacherName">
+      <UniqueIdentifier>{02c23578-a1aa-4f57-9e58-95d42a360f96}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\ScheduleClasses\Teacher\TeacherInitialsName">
+      <UniqueIdentifier>{b5b899fd-74c7-467a-b311-a176a35f62d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\UserInterface">
+      <UniqueIdentifier>{96f26885-ade8-4876-8f55-2b05d0e823f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\UserInterface\interfaces">
+      <UniqueIdentifier>{08c5013d-8602-4936-a43b-a93e3b1d0cac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\UserInterface\UserInterface">
+      <UniqueIdentifier>{ec6861f1-9b96-4301-bfe1-ffd2c05e615f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\UserInterface\UserInterface\ConsoleUserInterface">
+      <UniqueIdentifier>{e6866b33-3e54-4e12-afee-ec0c48064774}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Classroom\SimpleClassroom\SimpleClassroom.cpp">
-      <Filter>Исходные файлы\Classroom\SimpleClassroom</Filter>
-    </ClCompile>
-    <ClCompile Include="interfaces\Classroom.h">
-      <Filter>Исходные файлы\interfaces</Filter>
-    </ClCompile>
-    <ClCompile Include="interfaces\Teacher.h">
-      <Filter>Исходные файлы\interfaces</Filter>
-    </ClCompile>
     <ClCompile Include="Source.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Teacher\TeacherInitialsName\TeacherInitialsName.cpp">
-      <Filter>Исходные файлы\Teacher\TeacherInitialsName</Filter>
+    <ClCompile Include="ScheduleClasses\Schedule\FiveDaySchedule\FiveDaySchedule.cpp">
+      <Filter>Исходные файлы\ScheduleClasses\Schedule\FiveDaySchedule</Filter>
     </ClCompile>
-    <ClCompile Include="Teacher\TeacherName\TeacherName.cpp">
-      <Filter>Исходные файлы\Teacher\TeacherName</Filter>
+    <ClCompile Include="ScheduleClasses\Classroom\SimpleClassroom\SimpleClassroom.cpp">
+      <Filter>Исходные файлы\ScheduleClasses\Classroom\SimpleClassroom</Filter>
     </ClCompile>
-    <ClCompile Include="LessonInSchedule\SimpleLessonInSchedule\SimpleLessonInSchedule.cpp">
-      <Filter>Исходные файлы\LessonInSchedule\SimpleLessonInSchedule</Filter>
+    <ClCompile Include="ScheduleClasses\DayFromSchedule\SimpleDayFromSchedule\SimpleDayFromSchedule.cpp">
+      <Filter>Исходные файлы\ScheduleClasses\DayFromSchedule\SimpleDayFromSchedule</Filter>
     </ClCompile>
-    <ClCompile Include="DayFromSchedule\SimpleDayFromSchedule\SimpleDayFromSchedule.cpp">
-      <Filter>Исходные файлы\DayFromSchedule\SimpleDayFromSchedule</Filter>
+    <ClCompile Include="ScheduleClasses\LessonInSchedule\SimpleLessonInSchedule\SimpleLessonInSchedule.cpp">
+      <Filter>Исходные файлы\ScheduleClasses\LessonInSchedule\SimpleLessonInSchedule</Filter>
     </ClCompile>
-    <ClCompile Include="Schedule\FiveDaySchedule\FiveDaySchedule.cpp">
-      <Filter>Исходные файлы\Schedule\FiveDaySchedule</Filter>
+    <ClCompile Include="ScheduleClasses\Subject\SimpleSubject\SimpleSubject.cpp">
+      <Filter>Исходные файлы\ScheduleClasses\Subject\SimpleSubject</Filter>
     </ClCompile>
-    <ClCompile Include="Subject\SimpleSubject\SimpleSubject.cpp">
-      <Filter>Исходные файлы\Subject\SimpleSubject</Filter>
+    <ClCompile Include="ScheduleClasses\Teacher\TeacherInitialsName\TeacherInitialsName.cpp">
+      <Filter>Исходные файлы\ScheduleClasses\Teacher\TeacherInitialsName</Filter>
+    </ClCompile>
+    <ClCompile Include="ScheduleClasses\Teacher\TeacherName\TeacherName.cpp">
+      <Filter>Исходные файлы\ScheduleClasses\Teacher\TeacherName</Filter>
+    </ClCompile>
+    <ClCompile Include="UserInterface\UserInterface\ConsoleUserInterface\ConsoleUserInterface.cpp">
+      <Filter>Исходные файлы\UserInterface\UserInterface\ConsoleUserInterface</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Classroom\SimpleClassroom\SimpleClassroom.h">
-      <Filter>Исходные файлы\Classroom\SimpleClassroom</Filter>
+    <ClInclude Include="ScheduleClasses\interfaces\Classroom.h">
+      <Filter>Исходные файлы\ScheduleClasses\interfaces</Filter>
     </ClInclude>
-    <ClInclude Include="interfaces\Subject.h">
-      <Filter>Исходные файлы\interfaces</Filter>
+    <ClInclude Include="ScheduleClasses\Schedule\FiveDaySchedule\FiveDaySchedule.h">
+      <Filter>Исходные файлы\ScheduleClasses\Schedule\FiveDaySchedule</Filter>
     </ClInclude>
-    <ClInclude Include="Teacher\TeacherInitialsName\TeacherInitialsName.h">
-      <Filter>Исходные файлы\Teacher\TeacherInitialsName</Filter>
+    <ClInclude Include="ScheduleClasses\interfaces\Schedule.h">
+      <Filter>Исходные файлы\ScheduleClasses\interfaces</Filter>
     </ClInclude>
-    <ClInclude Include="Teacher\TeacherName\TeacherName.h">
-      <Filter>Исходные файлы\Teacher\TeacherName</Filter>
+    <ClInclude Include="ScheduleClasses\Classroom\SimpleClassroom\SimpleClassroom.h">
+      <Filter>Исходные файлы\ScheduleClasses\Classroom\SimpleClassroom</Filter>
     </ClInclude>
-    <ClInclude Include="interfaces\LessonInSchedule.h">
-      <Filter>Исходные файлы\interfaces</Filter>
+    <ClInclude Include="ScheduleClasses\interfaces\DayFromSchedule.h">
+      <Filter>Исходные файлы\ScheduleClasses\interfaces</Filter>
     </ClInclude>
-    <ClInclude Include="LessonInSchedule\SimpleLessonInSchedule\SimpleLessonInSchedule.h">
-      <Filter>Исходные файлы\LessonInSchedule\SimpleLessonInSchedule</Filter>
+    <ClInclude Include="ScheduleClasses\DayFromSchedule\SimpleDayFromSchedule\SimpleDayFromSchedule.h">
+      <Filter>Исходные файлы\ScheduleClasses\DayFromSchedule\SimpleDayFromSchedule</Filter>
     </ClInclude>
-    <ClInclude Include="interfaces\DayFromSchedule.h">
-      <Filter>Исходные файлы\interfaces</Filter>
+    <ClInclude Include="ScheduleClasses\interfaces\LessonInSchedule.h">
+      <Filter>Исходные файлы\ScheduleClasses\interfaces</Filter>
     </ClInclude>
-    <ClInclude Include="DayFromSchedule\SimpleDayFromSchedule\SimpleDayFromSchedule.h">
-      <Filter>Исходные файлы\DayFromSchedule\SimpleDayFromSchedule</Filter>
+    <ClInclude Include="ScheduleClasses\LessonInSchedule\SimpleLessonInSchedule\SimpleLessonInSchedule.h">
+      <Filter>Исходные файлы\ScheduleClasses\LessonInSchedule\SimpleLessonInSchedule</Filter>
     </ClInclude>
-    <ClInclude Include="Schedule\FiveDaySchedule\FiveDaySchedule.h">
-      <Filter>Исходные файлы\Schedule\FiveDaySchedule</Filter>
+    <ClInclude Include="ScheduleClasses\Subject\SimpleSubject\SimpleSubject.h">
+      <Filter>Исходные файлы\ScheduleClasses\Subject\SimpleSubject</Filter>
     </ClInclude>
-    <ClInclude Include="interfaces\Schedule.h">
-      <Filter>Исходные файлы\interfaces</Filter>
+    <ClInclude Include="ScheduleClasses\interfaces\Subject.h">
+      <Filter>Исходные файлы\ScheduleClasses\interfaces</Filter>
     </ClInclude>
-    <ClInclude Include="Subject\SimpleSubject\SimpleSubject.h">
-      <Filter>Исходные файлы\Subject\SimpleSubject</Filter>
+    <ClInclude Include="ScheduleClasses\interfaces\Teacher.h">
+      <Filter>Исходные файлы\ScheduleClasses\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="ScheduleClasses\Teacher\TeacherName\TeacherName.h">
+      <Filter>Исходные файлы\ScheduleClasses\Teacher\TeacherName</Filter>
+    </ClInclude>
+    <ClInclude Include="ScheduleClasses\Teacher\TeacherInitialsName\TeacherInitialsName.h">
+      <Filter>Исходные файлы\ScheduleClasses\Teacher\TeacherInitialsName</Filter>
+    </ClInclude>
+    <ClInclude Include="UserInterface\interface\UserInterface.h">
+      <Filter>Исходные файлы\UserInterface\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="UserInterface\UserInterface\ConsoleUserInterface\ConsoleUserInterface.h">
+      <Filter>Исходные файлы\UserInterface\UserInterface\ConsoleUserInterface</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
