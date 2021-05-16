@@ -1,14 +1,15 @@
+//класс для дебага, удили или паределай
 #pragma once
-#include "../../interfaces/Schedule.h"
-#include "../../interfaces/DayFromSchedule.h"
-#include <vector>
-class FiveDaySchedule : public Schedule
+#include "ScheduleClasses/interfaces/Schedule.h"
+#include "ScheduleClasses/Teacher/TeacherName/TeacherName.h"
+#include "ScheduleClasses/Subject/SimpleSubject/SimpleSubject.h"
+#include "ScheduleClasses/Classroom/SimpleClassroom/SimpleClassroom.h"
+#include "ScheduleClasses/DayFromSchedule/SimpleDayFromSchedule/SimpleDayFromSchedule.h"
+#include "ScheduleClasses/LessonInSchedule/SimpleLessonInSchedule/SimpleLessonInSchedule.h"
+class Sch : public Schedule
 {
 public:
-	FiveDaySchedule();
-	FiveDaySchedule(const std::initializer_list<DayFromSchedule*>& daysFromSchedule);
-	~FiveDaySchedule();
-
+	Sch();
 	DayFromSchedule& operator[](short int numberOfDay) override;
 	void addLessonInTheDay(LessonInSchedule* added, const unsigned& numberOfDay) override;
 	void addTeacher(Teacher* teacher) override;
@@ -27,29 +28,10 @@ public:
 	std::string getNameOfDay(int numberOfDay) override;
 	int getCountOfDay() override;
 
-protected:
-	std::vector<DayFromSchedule*> daysFromSchedule{ 5 };
-	std::vector<Teacher*> teachers;
-	std::vector<Subject*> subjects;
-	std::vector<Classroom*> classrooms;
+	TeacherName teacher;
+	SimpleSubject subject;
+	SimpleClassroom classroom;
+	SimpleLessonInSchedule lesson;
+	SimpleDayFromSchedule day;
 
-	void throwException(const bool& circumstance, const char* massage);
-	template<typename T>
-	inline void throwExceptionIfPtrIsNullptr(T* value);
-
-private:
-	std::vector<std::string> namesOfDays
-	{
-		"Monday",
-		"Tuesday",
-		"Wensday",
-		"Thursday",
-		"Friday"
-	};
 };
-
-template<typename T>
-inline void FiveDaySchedule::throwExceptionIfPtrIsNullptr(T* value)
-{
-	throwException(value == nullptr, "Value can't be nullptr");
-}

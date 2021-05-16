@@ -73,6 +73,16 @@ void FiveDaySchedule::delClassroom(const unsigned& index)
 	classrooms.erase(classrooms.begin() + index);
 }
 
+std::string FiveDaySchedule::getNameOfDay(int numberOfDay)
+{
+	return namesOfDays[numberOfDay - 1];
+}
+
+int FiveDaySchedule::getCountOfDay()
+{
+	return 5;
+}
+
 inline void FiveDaySchedule::throwException(const bool& circumstance, const char* massage)
 {
 	if (circumstance)
