@@ -8,6 +8,7 @@ public:
 	virtual void notifySubscribers() const override;
 	virtual void subscribe(const Observer* observer) override;
 	virtual void unsubscribe(const Observer* observer) override;
+	virtual ~SimplePublisher();
 protected:
 	std::vector<const Observer*> observers;
 };

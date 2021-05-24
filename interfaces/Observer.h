@@ -3,5 +3,5 @@
 class Observer
 {
 public:
-	virtual void notify() const = 0;
+	virtual void notify(const Publisher* publisher) const = 0;
 };

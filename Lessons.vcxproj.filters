@@ -85,14 +85,17 @@
     <ClCompile Include="Subject\SimpleSubject\SimpleSubject.cpp">
       <Filter>Исходные файлы\Subject\SimpleSubject</Filter>
     </ClCompile>
-    <ClCompile Include="PatternObserver\SimplePublisher\SimplePublisher.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="Classroom\EmptyClassoom\EmptyClassroom.cpp">
       <Filter>Исходные файлы\Classroom\EmptyClassroom</Filter>
     </ClCompile>
     <ClCompile Include="Teacher\EmptyTeacher\EmptyTeacher.cpp">
       <Filter>Исходные файлы\Teacher\EmptyTeacher</Filter>
+    </ClCompile>
+    <ClCompile Include="PatternObserver\SimplePublisher\SimplePublisher.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="PatternObserver\SimpleObserver.cpp">
+      <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -135,14 +138,17 @@
     <ClInclude Include="interfaces\Publisher.h">
       <Filter>Исходные файлы\interfaces</Filter>
     </ClInclude>
-    <ClInclude Include="PatternObserver\SimplePublisher\SimplePublisher.h">
-      <Filter>Исходные файлы</Filter>
-    </ClInclude>
     <ClInclude Include="Classroom\EmptyClassoom\EmptyClassroom.h">
       <Filter>Исходные файлы\Classroom\EmptyClassroom</Filter>
     </ClInclude>
     <ClInclude Include="Teacher\EmptyTeacher\EmptyTeacher.h">
       <Filter>Исходные файлы\Teacher\EmptyTeacher</Filter>
+    </ClInclude>
+    <ClInclude Include="PatternObserver\SimplePublisher\SimplePublisher.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="PatternObserver\SimpleObserver.h">
+      <Filter>Исходные файлы</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

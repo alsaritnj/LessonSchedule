@@ -144,6 +144,7 @@
     <ClCompile Include="interfaces\Classroom.h" />
     <ClCompile Include="interfaces\Teacher.h" />
     <ClCompile Include="LessonInSchedule\SimpleLessonInSchedule\SimpleLessonInSchedule.cpp" />
+    <ClCompile Include="PatternObserver\SimpleObserver.cpp" />
     <ClCompile Include="PatternObserver\SimplePublisher\SimplePublisher.cpp" />
     <ClCompile Include="Schedule\FiveDaySchedule\FiveDaySchedule.cpp" />
     <ClCompile Include="Source.cpp" />
@@ -163,6 +164,7 @@
     <ClInclude Include="interfaces\Schedule.h" />
     <ClInclude Include="interfaces\Subject.h" />
     <ClInclude Include="LessonInSchedule\SimpleLessonInSchedule\SimpleLessonInSchedule.h" />
+    <ClInclude Include="PatternObserver\SimpleObserver.h" />
     <ClInclude Include="PatternObserver\SimplePublisher\SimplePublisher.h" />
     <ClInclude Include="Schedule\FiveDaySchedule\FiveDaySchedule.h" />
     <ClInclude Include="Subject\SimpleSubject\SimpleSubject.h" />

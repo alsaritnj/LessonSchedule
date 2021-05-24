@@ -3,7 +3,7 @@
 void SimplePublisher::notifySubscribers() const
 {
 	for (const auto& el : observers)
-		el->notify();
+		el->notify(this);
 }
 
 void SimplePublisher::subscribe(const Observer* observer)
@@ -17,4 +17,9 @@ void SimplePublisher::unsubscribe(const Observer* observer)
 	if (it == this->observers.end())
 		throw(std::exception("This publisher haven't this observer in subscribers"));
 	this->observers.erase(it);
+}
+
+SimplePublisher::~SimplePublisher()
+{
+	notifySubscribers();
 }
