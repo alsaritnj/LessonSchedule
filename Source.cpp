@@ -6,9 +6,13 @@
 #include "Classroom/SimpleClassroom/SimpleClassroom.h"
 #include "Schedule/FiveDaySchedule/FiveDaySchedule.h"
 using namespace std;
+<<<<<<< HEAD
+//ÍÅ ÓÄÀËßÒÜ, ÍÅ ĞÀÇÎÁĞÀÂØÈÑÜ
+=======
 #include <xmemory>
 #include <map>
 #include <Windows.h>
+>>>>>>> main
 
 //class Created
 //{
@@ -253,8 +257,23 @@ using namespace std;
 //	return 0;
 //}
 
+<<<<<<< HEAD
+#include "ScheduleClasses/DayFromSchedule/SimpleDayFromSchedule/SimpleDayFromSchedule.h"
+#include "Sch.h"
+int main()
+{
+=======
 int main()
 {
 
+>>>>>>> main
 	return 0;
 }
+
+
+/*
+* TODO:
+* â SimpleDayFromSchedule ìåòîä del
+* 
+* FiveDaySchedule äåñòğóêòîğ
+*/

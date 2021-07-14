@@ -28,6 +28,9 @@ public:
 	std::string getNameOfDay(int numberOfDay) override;
 	int getCountOfDay() override;
 
+	std::string className() const override;
+	std::string classContent() const override;
+
 	TeacherName teacher;
 	SimpleSubject subject;
 	SimpleClassroom classroom;

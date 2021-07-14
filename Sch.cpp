@@ -82,3 +82,13 @@ int Sch::getCountOfDay()
 {
 	return 1;
 }
+
+std::string Sch::className() const
+{
+	return "alyo blyat";
+}
+
+std::string Sch::classContent() const
+{
+	return "nu blin da ler";
+}

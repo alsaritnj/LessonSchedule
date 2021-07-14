@@ -1,8 +1,8 @@
-<<<<<<< HEAD:DayFromSchedule/SimpleDayFromSchedule/SimpleDayFromSchedule.cpp
 #include "SimpleDayFromSchedule.h"
 
-SimpleDayFromSchedule::SimpleDayFromSchedule(std::initializer_list<LessonInSchedule*> lessonsInSchedule)
+SimpleDayFromSchedule::SimpleDayFromSchedule(std::initializer_list<LessonInSchedule*> lessonsInSchedule, const std::string& customClassName)
 {
+	_customClassName = customClassName;
 	this->lessonsInSchedule.reserve(lessonsInSchedule.size());
 	for (auto& el : lessonsInSchedule)
 		this->lessonsInSchedule.emplace_back(el);
@@ -15,7 +15,7 @@ SimpleDayFromSchedule::~SimpleDayFromSchedule()
 		delete el;
 }
 
-const LessonInSchedule& SimpleDayFromSchedule::operator[](const short int& numberOfLessonInSchedule)
+const LessonInSchedule& SimpleDayFromSchedule::operator[](const unsigned int& numberOfLessonInSchedule)
 {
 	std::vector<LessonInSchedule*>::iterator temp = std::find_if(lessonsInSchedule.begin(), lessonsInSchedule.end(),
 		[numberOfLessonInSchedule](LessonInSchedule* a)
@@ -37,8 +37,11 @@ void SimpleDayFromSchedule::add(LessonInSchedule* added)
 	std::sort(this->lessonsInSchedule.begin(), this->lessonsInSchedule.end());
 }
 
-void SimpleDayFromSchedule::del(const short int& numberOfLessonInSchedule)
+void SimpleDayFromSchedule::del(const unsigned int& numberOfLessonInSchedule)
 {
+	//Ё……
+	//помоему оно не будет работать корректно, так как удал€те элемент по номерму в массиве, а не по номеру в расписании(по полю класса lessoninschedule)
+	//но возмножно € ощибаюсь так что проверь потом
 	if (numberOfLessonInSchedule > lessonsInSchedule.size() + 1)
 		throw(std::exception("Too large number of the lesson in the schedule"));
 	delete lessonsInSchedule[numberOfLessonInSchedule - 1];
@@ -47,61 +50,19 @@ void SimpleDayFromSchedule::del(const short int& numberOfLessonInSchedule)
 
 unsigned SimpleDayFromSchedule::countOfLessons() const { return lessonsInSchedule.size(); }
 
-void SimpleDayFromSchedule::notifySubscribers() const { publisher.notifySubscribers(); }
-
-void SimpleDayFromSchedule::subscribe(const Observer* observer) { publisher.subscribe(observer); }
-
-void SimpleDayFromSchedule::unsubscribe(const Observer* observer) { publisher.unsubscribe(observer); }
-
-void SimpleDayFromSchedule::notify() const
+std::string SimpleDayFromSchedule::className() const
 {
-}
-=======
-#include "SimpleDayFromSchedule.h"
-
-SimpleDayFromSchedule::SimpleDayFromSchedule(std::initializer_list<LessonInSchedule*> lessonsInSchedule)
-{
-	this->lessonsInSchedule.reserve(lessonsInSchedule.size());
-	for (auto& el : lessonsInSchedule)
-		this->lessonsInSchedule.emplace_back(el);
-	std::sort(this->lessonsInSchedule.begin(), this->lessonsInSchedule.end());
+	return "Simple day from schedule";
 }
 
-SimpleDayFromSchedule::~SimpleDayFromSchedule()
+std::string SimpleDayFromSchedule::classContent() const
 {
-	for (const auto& el : lessonsInSchedule)
-		delete el;
-}
+	std::string result;
+	result = "List of lessons in schedule";
+	for (size_t i = 0; i < lessonsInSchedule.size(); i++)
+	{
+		result += "\n" + std::to_string(i) + ". " + lessonsInSchedule[i]->classContent();
+	}
 
-const LessonInSchedule& SimpleDayFromSchedule::operator[](const short int& numberOfLessonInSchedule)
-{
-	std::vector<LessonInSchedule*>::iterator temp = std::find_if(lessonsInSchedule.begin(), lessonsInSchedule.end(),
-		[numberOfLessonInSchedule](LessonInSchedule* a)
-		{
-			return numberOfLessonInSchedule == a->getNumberInSchedule();
-		});
-	if (temp == lessonsInSchedule.end())
-			throw std::exception("The lesson under the number that was passed does not exist");
-	else 
-		return **temp;
+	return result;
 }
-
-void SimpleDayFromSchedule::add(LessonInSchedule* added)
-{
-	for (const auto& el : lessonsInSchedule)
-		if (el->getNumberInSchedule() == added->getNumberInSchedule())
-			throw(std::exception("a lesson with the same number in the schedule as you tried to add already exists"));
-	lessonsInSchedule.emplace_back(added);
-	std::sort(this->lessonsInSchedule.begin(), this->lessonsInSchedule.end());
-}
-
-void SimpleDayFromSchedule::del(const short int& numberOfLessonInSchedule)
-{
-	if (numberOfLessonInSchedule > lessonsInSchedule.size() + 1)
-		throw(std::exception("Too large number of the lesson in the schedule"));
-	delete lessonsInSchedule[numberOfLessonInSchedule - 1];
-	lessonsInSchedule.erase(lessonsInSchedule.begin() + (numberOfLessonInSchedule - 1));
-}
-
-unsigned SimpleDayFromSchedule::countOfLessons() const { return lessonsInSchedule.size(); }
->>>>>>> 689b03797aa664e15f462a7efeaeb85cdb6340d9:ScheduleClasses/DayFromSchedule/SimpleDayFromSchedule/SimpleDayFromSchedule.cpp

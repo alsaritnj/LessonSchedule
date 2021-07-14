@@ -1,41 +1,42 @@
-<<<<<<< HEAD:Classroom/SimpleClassroom/SimpleClassroom.cpp
 #include "SimpleClassroom.h"
 #include <iostream>
 
-SimpleClassroom::SimpleClassroom(const std::string& classroomNumber) :
-	classroomNumber{classroomNumber}{}
+SimpleClassroom::SimpleClassroom(const std::string& classroomNumber, const std::string& customClassName) :
+	classroomNumber{classroomNumber}
+{
+	_customClassName = customClassName;
+}
 
-SimpleClassroom::SimpleClassroom(const short unsigned int& classroomNumber) :
-	classroomNumber{std::to_string(classroomNumber)}{}
+SimpleClassroom::SimpleClassroom(const int& classroomNumber, const std::string& customClassName) :
+	classroomNumber{std::to_string(classroomNumber), customClassName }
+{
+}
 
 SimpleClassroom::SimpleClassroom(const SimpleClassroom & other):
-	classroomNumber( other.classroomNumber ){}
+	classroomNumber( other.classroomNumber )
+{
+	_customClassName = other._customClassName;
+}
 
 SimpleClassroom::SimpleClassroom(SimpleClassroom&& other):
-	classroomNumber(std::move(other.classroomNumber)){}
+	classroomNumber(std::move(other.classroomNumber))
+{
+	_customClassName = std::move(other._customClassName);
+}
 
-std::string SimpleClassroom::getClassroomNumber() const { return classroomNumber; }
+std::string SimpleClassroom::getClassroomNumber() const
+{
+	return classroomNumber;
+}
 
-void SimpleClassroom::notifySubscribers() const { publisher.notifySubscribers(); }
+std::string SimpleClassroom::className() const
+{
+	return "Simple classroom";
+}
 
-void SimpleClassroom::subscribe(const Observer* observer) { publisher.subscribe(observer); }
-
-void SimpleClassroom::unsubscribe(const Observer* observer) { publisher.unsubscribe(observer); }
+std::string SimpleClassroom::classContent() const
+{
+	return "Classroom \"" + classroomNumber + "\"";
+}
 =======
-#include "SimpleClassroom.h"
-#include <iostream>
-
-SimpleClassroom::SimpleClassroom(const std::string& classroomNumber) :
-	classroomNumber{classroomNumber}{}
-
-SimpleClassroom::SimpleClassroom(const short unsigned int& classroomNumber) :
-	classroomNumber{std::to_string(classroomNumber)}{}
-
-SimpleClassroom::SimpleClassroom(const SimpleClassroom & other):
-	classroomNumber( other.classroomNumber ){}
-
-SimpleClassroom::SimpleClassroom(SimpleClassroom&& other):
-	classroomNumber(std::move(other.classroomNumber)){}
-
 std::string SimpleClassroom::getClassroomNumber() const { return classroomNumber; }
->>>>>>> 689b03797aa664e15f462a7efeaeb85cdb6340d9:ScheduleClasses/Classroom/SimpleClassroom/SimpleClassroom.cpp

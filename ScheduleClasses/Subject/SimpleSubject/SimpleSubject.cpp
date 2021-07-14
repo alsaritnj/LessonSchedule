@@ -1,42 +1,24 @@
-<<<<<<< HEAD:Subject/SimpleSubject/SimpleSubject.cpp
  #include "SimpleSubject.h"
 #include <iostream>
-SimpleSubject::SimpleSubject(const std::string& subjectName, Teacher& teacher) :
+SimpleSubject::SimpleSubject(const std::string& subjectName, Teacher& teacher, const std::string& customClassName) :
 	teacher{&teacher},
-	subjectName{subjectName}{}
-
-SimpleSubject::SimpleSubject(const SimpleSubject& other) :
-	teacher{other.teacher},
-	subjectName{ other.subjectName }{}
-SimpleSubject::SimpleSubject(SimpleSubject&& other) :
-	teacher{other.teacher},
-	subjectName{other.subjectName}{}
-
-std::string SimpleSubject::getSubjectName() const { return subjectName; }
-const Teacher& SimpleSubject::getTeacher() const { return *teacher; }
-
-void SimpleSubject::setSubjectName(const std::string& subjectName) { this->subjectName = subjectName; }
-
-void SimpleSubject::setTeacher(Teacher& teacher) 
-{ 
-	delete this->teacher;
-	this->teacher = &teacher; 
+	subjectName{subjectName}
+{
+	_customClassName = customClassName;
 }
 
-
-=======
- #include "SimpleSubject.h"
-#include <iostream>
-SimpleSubject::SimpleSubject(const std::string& subjectName, Teacher& teacher) :
-	teacher{&teacher},
-	subjectName{subjectName}{}
-
 SimpleSubject::SimpleSubject(const SimpleSubject& other) :
 	teacher{other.teacher},
-	subjectName{ other.subjectName }{}
+	subjectName{ other.subjectName }
+{
+	_customClassName = other._customClassName;
+}
 SimpleSubject::SimpleSubject(SimpleSubject&& other) :
 	teacher{other.teacher},
-	subjectName{other.subjectName}{}
+	subjectName{other.subjectName}
+{
+	_customClassName = std::move(other._customClassName);
+}
 
 std::string SimpleSubject::getSubjectName() const { return subjectName; }
 const Teacher& SimpleSubject::getTeacher() const { return *teacher; }
@@ -45,5 +27,12 @@ void SimpleSubject::setSubjectName(const std::string& subjectName) { this->subje
 
 void SimpleSubject::setTeacher(Teacher& teacher) { this->teacher = &teacher; }
 
+std::string SimpleSubject::className() const
+{
+	return "Simple subject";
+}
 
->>>>>>> 689b03797aa664e15f462a7efeaeb85cdb6340d9:ScheduleClasses/Subject/SimpleSubject/SimpleSubject.cpp
+std::string SimpleSubject::classContent() const
+{
+	return "Subject name " + subjectName + " teacher " + teacher->classContent();
+}

@@ -1,28 +1,33 @@
 #include "TeacherInitialsName.h"
 
-TeacherInitialsName::TeacherInitialsName(const std::string& surname,const std::string& name) :
-	teacherName{surname, name},
-	initialsName { name[0], '.' }{}
-TeacherInitialsName::TeacherInitialsName(const std::string& surname, const std::string& name, const std::string& patronymic) :
-	teacherName{ surname, name, patronymic },
-	initialsName{ name[0], '.' },
-	initialsPatronymic{ patronymic[0], '.' }{}
+TeacherInitialsName::TeacherInitialsName(const std::string& surname,const std::string& name, const std::string& patronymic, const std::string& customClassName) :
+	teacherName{surname, name, patronymic},
+	initialsName { name[0], '.' }
+{
+	_customClassName = customClassName;
+}
 
 TeacherInitialsName::TeacherInitialsName(const TeacherInitialsName& other) :
 	teacherName{ other.teacherName },
 	initialsName{ other.initialsName },
-	initialsPatronymic{ other.initialsPatronymic }{}
+	initialsPatronymic{ other.initialsPatronymic }
+{
+	_customClassName = other._customClassName;
+}
 TeacherInitialsName::TeacherInitialsName(TeacherInitialsName&& other) :
 	teacherName{ std::move(other.teacherName) },
 	initialsName{ std::move(other.initialsName) },
-	initialsPatronymic{ std::move(other.initialsPatronymic) }{}
+	initialsPatronymic{ std::move(other.initialsPatronymic) }
+{
+	_customClassName = std::move(other._customClassName);
+}
 
 TeacherInitialsName::TeacherInitialsName(const TeacherName& teacherName) :
 	teacherName{teacherName},
-	initialsName{ teacherName.getName() },
-	initialsPatronymic{ teacherName.getPatronymic().empty() ? "" : teacherName.getPatronymic() }
+	initialsName{ teacherName.getName()[0] },
+	initialsPatronymic{ teacherName.getPatronymic()[0] }
 {
-
+	_customClassName = teacherName.customClassName();
 }
 TeacherInitialsName::operator TeacherName() { return teacherName; }
 
@@ -45,4 +50,14 @@ void TeacherInitialsName::setPatronymic(const std::string& patronymic)
 {
 	this->teacherName.setPatronymic(patronymic);
 	this->initialsName = patronymic[0] + '.';
+}
+
+std::string TeacherInitialsName::className() const
+{
+	return "Teacher initials name";
+}
+
+std::string TeacherInitialsName::classContent() const
+{
+	return "Surname - " + teacherName.getSurname() + " name initial - " + initialsName + " patronymic initial - " + initialsPatronymic;;
 }

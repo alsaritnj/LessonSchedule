@@ -6,15 +6,18 @@
 class SimpleLessonInSchedule : public LessonInSchedule
 {
 public:
-	SimpleLessonInSchedule(Subject& subject, Classroom& classroom, const short unsigned int& numberInSchedule);
-	const Teacher& getTeacher() const override;
-	std::string getSubjectName() const override;
-	std::string getClassroomNumber() const override;
-	short int getNumberInSchedule() const override;
-	void setTeacher(Teacher& teacher);
-	void setSubjectName(const std::string& subjectName);
-	void setClassroomNumber(Classroom& classroom);
-	void setNumberInSchedule(const short int& numberInSchedule);
+	SimpleLessonInSchedule(Subject& subject, Classroom& classroom, const short unsigned int& numberInSchedule, const std::string& customClassName = "");
+	virtual const Teacher& getTeacher() const;
+	virtual std::string getSubjectName() const;
+	virtual std::string getClassroomNumber() const;
+	virtual short int getNumberInSchedule() const;
+	virtual void setTeacher(Teacher& teacher);
+	virtual void setSubjectName(const std::string& subjectName);
+	virtual void setClassroomNumber(Classroom& classroom);
+	virtual void setNumberInSchedule(const short int& numberInSchedule);
+
+	std::string className() const override;
+	std::string classContent() const override;
 
 	bool operator>(const LessonInSchedule& other) const override;
 	bool operator<(const LessonInSchedule& other) const override;

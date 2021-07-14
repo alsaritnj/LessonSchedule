@@ -1,19 +1,9 @@
-<<<<<<< HEAD:interfaces/Classroom.h
 #pragma once
 #include <string>
-#include "Publisher.h"
+#include "ClassName.h"
 
-class Classroom : public Publisher
+class Classroom : public ClassName
 {
 public:
 	virtual std::string getClassroomNumber() const = 0;
-=======
-#pragma once
-#include <string>
-
-class Classroom
-{
-public:
-	virtual std::string getClassroomNumber() const = 0;
->>>>>>> 689b03797aa664e15f462a7efeaeb85cdb6340d9:ScheduleClasses/interfaces/Classroom.h
 };
