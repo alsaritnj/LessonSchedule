@@ -1,18 +1,7 @@
 #include <iostream>
-#include "DayFromSchedule/SimpleDayFromSchedule/SimpleDayFromSchedule.h"
-#include "LessonInSchedule/SimpleLessonInSchedule/SimpleLessonInSchedule.h"
-#include "Subject/SimpleSubject/SimpleSubject.h"
-#include "Teacher/TeacherName/TeacherName.h"
-#include "Classroom/SimpleClassroom/SimpleClassroom.h"
-#include "Schedule/FiveDaySchedule/FiveDaySchedule.h"
 using namespace std;
-<<<<<<< HEAD
 //ÍÅ ÓÄÀËßÒÜ, ÍÅ ÐÀÇÎÁÐÀÂØÈÑÜ
-=======
-#include <xmemory>
-#include <map>
-#include <Windows.h>
->>>>>>> main
+
 
 //class Created
 //{
@@ -257,16 +246,195 @@ using namespace std;
 //	return 0;
 //}
 
-<<<<<<< HEAD
-#include "ScheduleClasses/DayFromSchedule/SimpleDayFromSchedule/SimpleDayFromSchedule.h"
-#include "Sch.h"
-int main()
-{
-=======
-int main()
-{
+#include "UserInterface/ÑlassInstanceCreator/TeacherCreator/TeacherInitialsNameCreator/TeacherInitialsNameCreator.h"
+#include "UserInterface/ÑlassInstanceCreator/LessonInScheduleCreator/SimpleLessonInScheduleCreator/SimpleLessonInScheduleCreator.h"
+#include "ScheduleClasses/Subject/SimpleSubject/SimpleSubject.h"
+#include "ScheduleClasses/Classroom/SimpleClassroom/SimpleClassroom.h"
+#include "ScheduleClasses/Teacher/TeacherName/TeacherName.h"
+#include "UserInterface/ÑlassInstanceCreator/SubjectCreator/SimpleSubjectCreator/SimpleSubjectCreator.h"
+#include "UserInterface/ÑlassInstanceCreator/TeacherCreator/TeacherNameCreator/TeacherNameCreator.h"
+#include "UserInterface/ÑlassInstanceCreator/ClassroomCreator\SimpleClassroomCreator/SimpleClassroomCreator.h"
 
->>>>>>> main
+vector<Classroom*> classrooms{1};
+vector<Teacher*> teachers{1};
+vector<Subject*> subjects{1};
+vector<LessonInSchedule*> lessons{1};
+
+vector<ÑlassInstanceCreator*> creators
+{
+	new SimpleClassroomCreator(),
+	new TeacherNameCreator(),
+	new TeacherInitialsNameCreator(),
+	new SimpleSubjectCreator(teachers),
+	new SimpleLessonInScheduleCreator(subjects, classrooms)
+};
+
+void add()
+{
+	string input;
+	int index;
+	cout << "What you want to create?:" << endl;
+	for (size_t i = 0; i < creators.size(); i++)
+	{
+		cout << i << ". " << creators[i]->nameOfCreatableClass() << endl;
+	}
+	cin >> index;
+	ÑlassInstanceCreator* creator = creators[index];
+	for (size_t i = 0; i < creator->getCountOfQuestions(); i++)
+	{
+		if (creator->getQuestion(i).typeOfAnswer() == Question::enterableByUser)
+		{
+			cout << creator->getQuestion(i).question() << ": ";
+			cin >> input;
+			creator->setAnswer(i, &input);
+		}
+		else if (creator->getQuestion(i).typeOfAnswer() == Question::existing)
+		{
+			cout << "Choose object from list:" << endl;
+			for (size_t j = 0; j < creator->getQuestion(i).sizeOfSelectionList(); j++)
+			{
+				cout << j << ". " << creator->getQuestion(i).selectionList()[j]->customClassName() << endl;
+			}
+			cin >> index;
+			creator->setAnswer(i, const_cast<void*>(static_cast<const void*>(creator->getQuestion(i).selectionList()[index])));
+		}
+	}
+	cout << "kuda?" << endl;
+	cout << "0. Classroom" << endl;
+	cout << "1. Teacher" << endl;
+	cout << "2. Subject" << endl;
+	cout << "3. LessonInSchedule" << endl;
+	cin >> index;
+	switch (index)
+	{
+	case 0:
+	{
+		classrooms.emplace_back(static_cast<Classroom*>(creator->create()));
+		break;
+	}
+	case 1:
+	{		
+		teachers.emplace_back(static_cast<Teacher*>(creator->create()));
+		break;
+	}
+	case 2:
+	{
+		subjects.emplace_back(static_cast<Subject*>(creator->create()));
+		break;
+	}
+	case 3:
+	{		
+		lessons.emplace_back(static_cast<LessonInSchedule*>(creator->create()));
+		break;
+	}
+	}
+}
+
+void print()
+{
+	int index;
+	cout << "chto?" << endl;
+	cout << "0. Classroom" << endl;
+	cout << "1. Teacher" << endl;
+	cout << "2. Subject" << endl;
+	cout << "3. LessonInSchedule" << endl;
+	cin >> index;
+	switch (index)
+	{
+	case 0:
+	{
+		for (auto el : classrooms)
+		{
+			cout << "CLASS NAME:  " << el->className() << " \nCLASS CONTENT: " << el->classContent() << " \n CUSTOM CLASS NAME: " << el->customClassName() << endl;
+		}
+		break;
+	}
+	case 1:
+	{
+		for (auto el : teachers)
+		{
+			cout << "CLASS NAME:  " << el->className() << " \nCLASS CONTENT: " << el->classContent() << " \n CUSTOM CLASS NAME: " << el->customClassName() << endl;
+		}
+		break;
+	}
+	case 2:
+	{
+		for (auto el : subjects)
+		{
+			cout << "CLASS NAME:  " << el->className() << " \nCLASS CONTENT: " << el->classContent() << " \n CUSTOM CLASS NAME: " << el->customClassName() << endl;
+		}
+		break;
+	}
+	case 3:
+	{
+		
+		for (auto el : lessons)
+		{
+			cout << "CLASS NAME:  " << el->className() << " \nCLASS CONTENT: " << el->classContent() << " \n CUSTOM CLASS NAME: " << el->customClassName() << endl;
+		}
+		break;
+	}
+	}
+}
+
+int main()
+{
+	while (true)
+	{
+		system("cls");
+		int a;
+		cin >> a;
+		switch (a)
+		{
+			case 1:
+			{
+				add();
+				break;
+			}
+			case 2:
+			{
+				print();
+				system("pause");
+				break;
+			}
+			case 3: 
+			{
+				for (auto el : creators)
+				{
+					delete el;
+				}
+				return 0;
+			}
+		}
+	}
+
+
+	/*ÑlassInstanceCreator* creator;
+	creator = new SimpleClassroomCreator;
+
+	string input;
+
+	for (size_t i = 0; i < creator->getCountOfQuestions(); i++)
+	{
+		if (creator->getQuestion(i).typeOfAnswer() == Question::enterableByUser)
+		{
+			cout << creator->getQuestion(i).question() << ": ";
+			cin >> input;
+			creator->setAnswer(i, &input);
+		}
+		else if (creator->getQuestion(i).typeOfAnswer() == Question::existing)
+		{
+
+		}
+	}
+
+	SimpleClassroom* sc = static_cast<SimpleClassroom*>(creator->create());
+
+	cout << sc->className() << " \t" << sc->classContent() << " \t" << sc->customClassName() << " \t" << sc->getClassroomNumber() << endl;
+
+	delete creator;
+	delete sc;*/
+
 	return 0;
 }
 
@@ -276,4 +444,6 @@ int main()
 * â SimpleDayFromSchedule ìåòîä del
 * 
 * FiveDaySchedule äåñòðóêòîð
+* 
+* ïðîâåðèòü âñÿêèå êîíñòðóêòîðû è òàì äåñòðóêòîðû äà à òî îíè íèõóÿ íå ðàáîòàþò
 */

@@ -41,15 +41,15 @@ void FiveDaySchedule::addClassroom(Classroom* classroom)
 	 classrooms.erase(classrooms.begin() + index);
  }
 
-const Teacher FiveDaySchedule::getTeacher(const unsigned& index) const 
+const Teacher& FiveDaySchedule::getTeacher(const unsigned& index) const
 {
 	return *teachers.at(index);
 }
-const Subject FiveDaySchedule::getSubject(const unsigned& index) const 
+const Subject& FiveDaySchedule::getSubject(const unsigned& index) const
 { 
 	return *subjects.at(index);
 }
-const Classroom FiveDaySchedule::getClassroom(const unsigned& index) const 
+const Classroom& FiveDaySchedule::getClassroom(const unsigned& index) const
 { 
 	return *classrooms.at(index);
 }

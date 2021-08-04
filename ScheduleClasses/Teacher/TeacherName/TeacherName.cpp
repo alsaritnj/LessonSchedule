@@ -52,7 +52,7 @@ std::string TeacherName::className() const
 
 std::string TeacherName::classContent() const
 {
-	return "Surname - " + surname + " name - " + name + " patronymic - " + patronymic;
+	return "Teacher content:\n\tSurname - " + surname + "\n\tName - " + name + "\n\tPatronymic - " + patronymic;
 }
 
 

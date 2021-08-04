@@ -147,7 +147,16 @@
     <ClCompile Include="ScheduleClasses\Teacher\TeacherInitialsName\TeacherInitialsName.cpp" />
     <ClCompile Include="ScheduleClasses\Teacher\TeacherName\TeacherName.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="UserInterface\Question\Question.cpp" />
     <ClCompile Include="UserInterface\UserInterface\ConsoleUserInterface\ConsoleUserInterface.cpp" />
+    <ClCompile Include="UserInterface\СlassInstanceCreator\ClassroomCreator\SimpleClassroomCreator\SimpleClassroomCreator.cpp" />
+    <ClCompile Include="UserInterface\СlassInstanceCreator\DayFromScheduleCreator\SimpleDayFromScheduleCreator\SimpleDayFromScheduleCreator.cpp" />
+    <ClCompile Include="UserInterface\СlassInstanceCreator\LessonInScheduleCreator\SimpleLessonInScheduleCreator\SimpleLessonInScheduleCreator.cpp" />
+    <ClCompile Include="UserInterface\СlassInstanceCreator\ScheduleCreator\FiveDayScheduleCreator\FiveDayScheduleCreator.cpp" />
+    <ClCompile Include="UserInterface\СlassInstanceCreator\SubjectCreator\SimpleSubjectCreator\SimpleSubjectCreator.cpp" />
+    <ClCompile Include="UserInterface\СlassInstanceCreator\TeacherCreator\TeacherInitialsNameCreator\TeacherInitialsNameCreator.cpp" />
+    <ClCompile Include="UserInterface\СlassInstanceCreator\TeacherCreator\TeacherNameCreator\TeacherNameCreator.cpp" />
+    <ClCompile Include="UserInterface\СlassInstanceCreator\СlassInstanceCreatorAncestor\СlassInstanceCreatorAncestor.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Sch.h" />
@@ -166,8 +175,17 @@
     <ClInclude Include="ScheduleClasses\Teacher\TeacherInitialsName\TeacherInitialsName.h" />
     <ClInclude Include="ScheduleClasses\Teacher\TeacherName\TeacherName.h" />
     <ClInclude Include="UserInterface\interface\UserInterface.h" />
-	<ClInclude Include="UserInterface\interface\СlassInstanceCreator" />
+    <ClInclude Include="UserInterface\interface\СlassInstanceCreator.h" />
+    <ClInclude Include="UserInterface\Question\Question.h" />
     <ClInclude Include="UserInterface\UserInterface\ConsoleUserInterface\ConsoleUserInterface.h" />
+    <ClInclude Include="UserInterface\СlassInstanceCreator\ClassroomCreator\SimpleClassroomCreator\SimpleClassroomCreator.h" />
+    <ClInclude Include="UserInterface\СlassInstanceCreator\DayFromScheduleCreator\SimpleDayFromScheduleCreator\SimpleDayFromScheduleCreator.h" />
+    <ClInclude Include="UserInterface\СlassInstanceCreator\LessonInScheduleCreator\SimpleLessonInScheduleCreator\SimpleLessonInScheduleCreator.h" />
+    <ClInclude Include="UserInterface\СlassInstanceCreator\ScheduleCreator\FiveDayScheduleCreator\FiveDayScheduleCreator.h" />
+    <ClInclude Include="UserInterface\СlassInstanceCreator\SubjectCreator\SimpleSubjectCreator\SimpleSubjectCreator.h" />
+    <ClInclude Include="UserInterface\СlassInstanceCreator\TeacherCreator\TeacherInitialsNameCreator\TeacherInitialsNameCreator.h" />
+    <ClInclude Include="UserInterface\СlassInstanceCreator\TeacherCreator\TeacherNameCreator\TeacherNameCreator.h" />
+    <ClInclude Include="UserInterface\СlassInstanceCreator\СlassInstanceCreatorAncestor\СlassInstanceCreatorAncestor.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

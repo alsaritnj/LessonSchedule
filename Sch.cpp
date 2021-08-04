@@ -15,7 +15,7 @@ DayFromSchedule& Sch::operator[](short int numberOfDay)
 	return day;
 }
 
-void Sch::addLessonInTheDay(LessonInSchedule* added, const unsigned& numberOfDay)
+void Sch::addDay(DayFromSchedule* added, const unsigned& numberOfDay)
 {
 }
 

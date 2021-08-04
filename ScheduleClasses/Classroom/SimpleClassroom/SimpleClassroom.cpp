@@ -8,7 +8,7 @@ SimpleClassroom::SimpleClassroom(const std::string& classroomNumber, const std::
 }
 
 SimpleClassroom::SimpleClassroom(const int& classroomNumber, const std::string& customClassName) :
-	classroomNumber{std::to_string(classroomNumber), customClassName }
+	SimpleClassroom(std::to_string(classroomNumber), customClassName)
 {
 }
 
@@ -36,7 +36,5 @@ std::string SimpleClassroom::className() const
 
 std::string SimpleClassroom::classContent() const
 {
-	return "Classroom \"" + classroomNumber + "\"";
+	return "Classroom content:\n\tNumber - " + classroomNumber;
 }
-=======
-std::string SimpleClassroom::getClassroomNumber() const { return classroomNumber; }

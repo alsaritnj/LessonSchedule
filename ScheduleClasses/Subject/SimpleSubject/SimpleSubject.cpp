@@ -34,5 +34,5 @@ std::string SimpleSubject::className() const
 
 std::string SimpleSubject::classContent() const
 {
-	return "Subject name " + subjectName + " teacher " + teacher->classContent();
+	return "Subject content:\n\tSubject name - " + subjectName + "\n\t" + teacher->classContent();
 }

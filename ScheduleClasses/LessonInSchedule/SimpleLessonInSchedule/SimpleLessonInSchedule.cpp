@@ -25,7 +25,7 @@ std::string SimpleLessonInSchedule::className() const
 
 std::string SimpleLessonInSchedule::classContent() const
 {
-	return "Subject " + subject->classContent() + " classroom " + classroom->classContent() + " numberInSchedule " + std::to_string(numberInSchedule);
+	return "Lesson in schedule content:\n\t" + subject->classContent() + "\n\t" + classroom->classContent() + "\n\tNumberInSchedule - " + std::to_string(numberInSchedule);
 }
 
 bool SimpleLessonInSchedule::operator>(const LessonInSchedule& other) const { return this->numberInSchedule > other.getNumberInSchedule(); }

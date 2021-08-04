@@ -11,16 +11,19 @@ class Sch : public Schedule
 public:
 	Sch();
 	DayFromSchedule& operator[](short int numberOfDay) override;
-	void addLessonInTheDay(LessonInSchedule* added, const unsigned& numberOfDay) override;
+	void addDay(DayFromSchedule* added, const unsigned& numberOfDay) override;
 	void addTeacher(Teacher* teacher) override;
 	void addSubject(Subject* subject) override;
 	void addClassroom(Classroom* classroom) override;
+
 	const Teacher& getTeacher(const unsigned& index) const override;
 	const Subject& getSubject(const unsigned& index) const override;
 	const Classroom& getClassroom(const unsigned& index) const override;
+
 	const size_t countOfTeachers();
 	const size_t countOfSubjects();
 	const size_t countOfClassrooms();
+
 	void delTeacher(const unsigned& index) override;
 	void delSubject(const unsigned& index) override;
 	void delClassroom(const unsigned& index) override;

@@ -2,7 +2,8 @@
 
 TeacherInitialsName::TeacherInitialsName(const std::string& surname,const std::string& name, const std::string& patronymic, const std::string& customClassName) :
 	teacherName{surname, name, patronymic},
-	initialsName { name[0], '.' }
+	initialsName { name[0], '.' },
+	initialsPatronymic{patronymic[0], '.'}
 {
 	_customClassName = customClassName;
 }
@@ -59,5 +60,5 @@ std::string TeacherInitialsName::className() const
 
 std::string TeacherInitialsName::classContent() const
 {
-	return "Surname - " + teacherName.getSurname() + " name initial - " + initialsName + " patronymic initial - " + initialsPatronymic;;
+	return "Teacher content:\n\tSurname - " + teacherName.getSurname() + "\n\tName initial - " + initialsName + "\n\tPatronymic initial - " + initialsPatronymic;;
 }

@@ -62,6 +62,54 @@
     <Filter Include="Исходные файлы\UserInterface\UserInterface\ConsoleUserInterface">
       <UniqueIdentifier>{e6866b33-3e54-4e12-afee-ec0c48064774}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\UserInterface\СlassInstanceCreator">
+      <UniqueIdentifier>{b10d1c2a-0900-4ff9-896d-5bf68132bd97}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\UserInterface\СlassInstanceCreator\ClassroomCreator">
+      <UniqueIdentifier>{8f3b3165-a6bb-4841-b47a-2374fa16ec48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\UserInterface\СlassInstanceCreator\ClassroomCreator\SimpleClassroomCreator">
+      <UniqueIdentifier>{55b37bf9-a056-49bb-936b-9fa234af1e68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\UserInterface\Question">
+      <UniqueIdentifier>{578c2edd-571c-4ef5-b001-b52580f3e152}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\UserInterface\СlassInstanceCreator\ClassInstanceCreatorAncestor">
+      <UniqueIdentifier>{867a3e99-6f14-4eba-9db4-f787e0702b4f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\UserInterface\СlassInstanceCreator\TeacherCreator">
+      <UniqueIdentifier>{ad215f16-67fc-4191-a572-322b7409204f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\UserInterface\СlassInstanceCreator\TeacherCreator\TeacherInitialsNameCreator">
+      <UniqueIdentifier>{6288bf22-0df4-4489-8b0a-6c35107e286a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\UserInterface\СlassInstanceCreator\TeacherCreator\TeacherNameCreator">
+      <UniqueIdentifier>{7809ff24-3248-47e6-a76d-ab36f448ea56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\UserInterface\СlassInstanceCreator\LessonInScheduleCreator">
+      <UniqueIdentifier>{e5904c2d-713d-4e6f-963e-bdf6cf03e41c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\UserInterface\СlassInstanceCreator\DayFromScheduleCreator">
+      <UniqueIdentifier>{466fe86f-aee0-4050-9a2a-cb37613a3db6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\UserInterface\СlassInstanceCreator\ScheduleCreator">
+      <UniqueIdentifier>{c1e87284-3993-4fcb-a18c-e0ca315dcdb9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\UserInterface\СlassInstanceCreator\SubjectCreator">
+      <UniqueIdentifier>{07ba2fd4-6af5-45d3-8cfa-adca0b22786d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\UserInterface\СlassInstanceCreator\ScheduleCreator\FiveDayScheduleCreator">
+      <UniqueIdentifier>{bd072097-6fb9-4376-a8de-13200fd32dc0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\UserInterface\СlassInstanceCreator\DayFromScheduleCreator\SimpleDayFromScheduleCreator">
+      <UniqueIdentifier>{9e7e3fbb-a9d1-4eea-a2a5-d0c20138e6d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\UserInterface\СlassInstanceCreator\SubjectCreator\SimpleSubjectCreator">
+      <UniqueIdentifier>{444b87e0-74f7-4b9b-ace5-1ef922befb02}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\UserInterface\СlassInstanceCreator\LessonInScheduleCreator\SimpleLessonInScheduleCreator">
+      <UniqueIdentifier>{c1879393-34df-47a9-957e-0b6ca3fc352c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp">
@@ -93,6 +141,33 @@
     </ClCompile>
     <ClCompile Include="Sch.cpp">
       <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="UserInterface\СlassInstanceCreator\ClassroomCreator\SimpleClassroomCreator\SimpleClassroomCreator.cpp">
+      <Filter>Исходные файлы\UserInterface\СlassInstanceCreator\ClassroomCreator\SimpleClassroomCreator</Filter>
+    </ClCompile>
+    <ClCompile Include="UserInterface\Question\Question.cpp">
+      <Filter>Исходные файлы\UserInterface\Question</Filter>
+    </ClCompile>
+    <ClCompile Include="UserInterface\СlassInstanceCreator\СlassInstanceCreatorAncestor\СlassInstanceCreatorAncestor.cpp">
+      <Filter>Исходные файлы\UserInterface\СlassInstanceCreator\ClassInstanceCreatorAncestor</Filter>
+    </ClCompile>
+    <ClCompile Include="UserInterface\СlassInstanceCreator\TeacherCreator\TeacherInitialsNameCreator\TeacherInitialsNameCreator.cpp">
+      <Filter>Исходные файлы\UserInterface\СlassInstanceCreator\TeacherCreator\TeacherInitialsNameCreator</Filter>
+    </ClCompile>
+    <ClCompile Include="UserInterface\СlassInstanceCreator\TeacherCreator\TeacherNameCreator\TeacherNameCreator.cpp">
+      <Filter>Исходные файлы\UserInterface\СlassInstanceCreator\TeacherCreator\TeacherNameCreator</Filter>
+    </ClCompile>
+    <ClCompile Include="UserInterface\СlassInstanceCreator\LessonInScheduleCreator\SimpleLessonInScheduleCreator\SimpleLessonInScheduleCreator.cpp">
+      <Filter>Исходные файлы\UserInterface\СlassInstanceCreator\LessonInScheduleCreator\SimpleLessonInScheduleCreator</Filter>
+    </ClCompile>
+    <ClCompile Include="UserInterface\СlassInstanceCreator\ScheduleCreator\FiveDayScheduleCreator\FiveDayScheduleCreator.cpp">
+      <Filter>Исходные файлы\UserInterface\СlassInstanceCreator\ScheduleCreator\FiveDayScheduleCreator</Filter>
+    </ClCompile>
+    <ClCompile Include="UserInterface\СlassInstanceCreator\DayFromScheduleCreator\SimpleDayFromScheduleCreator\SimpleDayFromScheduleCreator.cpp">
+      <Filter>Исходные файлы\UserInterface\СlassInstanceCreator\DayFromScheduleCreator\SimpleDayFromScheduleCreator</Filter>
+    </ClCompile>
+    <ClCompile Include="UserInterface\СlassInstanceCreator\SubjectCreator\SimpleSubjectCreator\SimpleSubjectCreator.cpp">
+      <Filter>Исходные файлы\UserInterface\СlassInstanceCreator\SubjectCreator\SimpleSubjectCreator</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -147,8 +222,35 @@
     <ClInclude Include="ScheduleClasses\interfaces\ClassName.h">
       <Filter>Исходные файлы\ScheduleClasses\interfaces</Filter>
     </ClInclude>
-    <ClInclude Include="UserInterface\interface\СlassInstanceCreator">
+    <ClInclude Include="UserInterface\interface\СlassInstanceCreator.h">
       <Filter>Исходные файлы\UserInterface\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="UserInterface\СlassInstanceCreator\ClassroomCreator\SimpleClassroomCreator\SimpleClassroomCreator.h">
+      <Filter>Исходные файлы\UserInterface\СlassInstanceCreator\ClassroomCreator\SimpleClassroomCreator</Filter>
+    </ClInclude>
+    <ClInclude Include="UserInterface\Question\Question.h">
+      <Filter>Исходные файлы\UserInterface\Question</Filter>
+    </ClInclude>
+    <ClInclude Include="UserInterface\СlassInstanceCreator\СlassInstanceCreatorAncestor\СlassInstanceCreatorAncestor.h">
+      <Filter>Исходные файлы\UserInterface\СlassInstanceCreator\ClassInstanceCreatorAncestor</Filter>
+    </ClInclude>
+    <ClInclude Include="UserInterface\СlassInstanceCreator\TeacherCreator\TeacherInitialsNameCreator\TeacherInitialsNameCreator.h">
+      <Filter>Исходные файлы\UserInterface\СlassInstanceCreator\TeacherCreator\TeacherInitialsNameCreator</Filter>
+    </ClInclude>
+    <ClInclude Include="UserInterface\СlassInstanceCreator\TeacherCreator\TeacherNameCreator\TeacherNameCreator.h">
+      <Filter>Исходные файлы\UserInterface\СlassInstanceCreator\TeacherCreator\TeacherNameCreator</Filter>
+    </ClInclude>
+    <ClInclude Include="UserInterface\СlassInstanceCreator\LessonInScheduleCreator\SimpleLessonInScheduleCreator\SimpleLessonInScheduleCreator.h">
+      <Filter>Исходные файлы\UserInterface\СlassInstanceCreator\LessonInScheduleCreator\SimpleLessonInScheduleCreator</Filter>
+    </ClInclude>
+    <ClInclude Include="UserInterface\СlassInstanceCreator\ScheduleCreator\FiveDayScheduleCreator\FiveDayScheduleCreator.h">
+      <Filter>Исходные файлы\UserInterface\СlassInstanceCreator\ScheduleCreator\FiveDayScheduleCreator</Filter>
+    </ClInclude>
+    <ClInclude Include="UserInterface\СlassInstanceCreator\DayFromScheduleCreator\SimpleDayFromScheduleCreator\SimpleDayFromScheduleCreator.h">
+      <Filter>Исходные файлы\UserInterface\СlassInstanceCreator\DayFromScheduleCreator\SimpleDayFromScheduleCreator</Filter>
+    </ClInclude>
+    <ClInclude Include="UserInterface\СlassInstanceCreator\SubjectCreator\SimpleSubjectCreator\SimpleSubjectCreator.h">
+      <Filter>Исходные файлы\UserInterface\СlassInstanceCreator\SubjectCreator\SimpleSubjectCreator</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

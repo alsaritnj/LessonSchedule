@@ -16,9 +16,9 @@ public:
 	void addSubject(Subject* subject) override;
 	void addClassroom(Classroom* classroom) override;
 
-	const Teacher getTeacher(const unsigned& index) const override;
-	const Subject getSubject(const unsigned& index) const override;
-	const Classroom getClassroom(const unsigned& index) const override;
+	const Teacher& getTeacher(const unsigned& index) const override;
+	const Subject& getSubject(const unsigned& index) const override;
+	const Classroom& getClassroom(const unsigned& index) const override;
 
 	const size_t countOfTeachers();
 	const size_t countOfSubjects();
