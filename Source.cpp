@@ -255,10 +255,10 @@ using namespace std;
 #include "UserInterface/ÑlassInstanceCreator/TeacherCreator/TeacherNameCreator/TeacherNameCreator.h"
 #include "UserInterface/ÑlassInstanceCreator/ClassroomCreator\SimpleClassroomCreator/SimpleClassroomCreator.h"
 
-vector<Classroom*> classrooms{1};
-vector<Teacher*> teachers{1};
-vector<Subject*> subjects{1};
-vector<LessonInSchedule*> lessons{1};
+vector<Classroom*> classrooms;
+vector<Teacher*> teachers;
+vector<Subject*> subjects;
+vector<LessonInSchedule*> lessons;
 
 vector<ÑlassInstanceCreator*> creators
 {
@@ -293,10 +293,10 @@ void add()
 			cout << "Choose object from list:" << endl;
 			for (size_t j = 0; j < creator->getQuestion(i).sizeOfSelectionList(); j++)
 			{
-				cout << j << ". " << creator->getQuestion(i).selectionList()[j]->customClassName() << endl;
+				cout << j << ". " << creator->getQuestion(i).objectFromSelectionList(j)->customClassName() << endl;
 			}
 			cin >> index;
-			creator->setAnswer(i, const_cast<void*>(static_cast<const void*>(creator->getQuestion(i).selectionList()[index])));
+			creator->setAnswer(i, const_cast<void*>(static_cast<const void*>(creator->getQuestion(i).objectFromSelectionList(index))));
 		}
 	}
 	cout << "kuda?" << endl;
@@ -377,6 +377,15 @@ void print()
 	}
 }
 
+class A
+{
+public:
+	template<typename T>
+	A(T)
+	{
+		cout << "sdfg" << endl;
+	}
+};
 int main()
 {
 	while (true)
@@ -446,4 +455,6 @@ int main()
 * FiveDaySchedule äåñòðóêòîð
 * 
 * ïðîâåðèòü âñÿêèå êîíñòðóêòîðû è òàì äåñòðóêòîðû äà à òî îíè íèõóÿ íå ðàáîòàþò
+* 
+* question.cpp ctor of copy
 */

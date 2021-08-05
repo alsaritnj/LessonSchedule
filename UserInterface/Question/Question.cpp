@@ -4,16 +4,6 @@ Question::Question(const std::string& question, const int& typeOfAnswer) :
 	_question(question),
 	_typeOfAnswer(typeOfAnswer)
 {}
-template<typename T>
-Question::Question(const std::string& question, const int& typeOfAnswer, T** selectionList, const size_t& sizeOfSelectionList) :
-	_question(question),
-	_typeOfAnswer(typeOfAnswer),
-	_selectionList(selectionList),
-	_sizeOfSelectionList(sizeOfSelectionList)
-{
-	
-}
-
 Question::Question(const Question& other) :
 	_question(other._question),
 	_typeOfAnswer(other._typeOfAnswer),
@@ -59,9 +49,4 @@ const ClassName* Question::objectFromSelectionList(const unsigned& index) const
 const size_t Question::sizeOfSelectionList() const
 {
 	return _sizeOfSelectionList;
-}
-
-template<typename T>
-void Question::resetSelectionList(T** selectionList, const size_t& sizeOfSelectionList)
-{
 }

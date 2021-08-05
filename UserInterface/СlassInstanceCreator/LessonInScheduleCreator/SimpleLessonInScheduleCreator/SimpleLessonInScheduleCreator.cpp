@@ -3,8 +3,8 @@
 SimpleLessonInScheduleCreator::SimpleLessonInScheduleCreator(std::vector<Subject*>& subjectList, std::vector<Classroom*>& classroomList) :
 	ÑlassInstanceCreatorAncestor
 	({
-		Question("Subject", Question::existing, transformArrayOfPtrToArrayOfPtrOnClassName(subjectList.data(), subjectList.size()), subjectList.size()),
-		Question("Classroom", Question::existing, transformArrayOfPtrToArrayOfPtrOnClassName(classroomList.data(), classroomList.size()), classroomList.size()),
+		Question("Subject", Question::existing, subjectList.data(), subjectList.size()),
+		Question("Classroom", Question::existing, classroomList.data(), classroomList.size()),
 		Question("NumberInSchedule", Question::enterableByUser),
 		Question("Custom nama of this object", Question::enterableByUser)
 	})
