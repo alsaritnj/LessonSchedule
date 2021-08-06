@@ -110,6 +110,9 @@
     <Filter Include="Исходные файлы\UserInterface\СlassInstanceCreator\LessonInScheduleCreator\SimpleLessonInScheduleCreator">
       <UniqueIdentifier>{c1879393-34df-47a9-957e-0b6ca3fc352c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\UserInterface\VectorWithQuestionNotifier">
+      <UniqueIdentifier>{48afa857-0168-4859-a10a-e3111579d79e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp">
@@ -251,6 +254,9 @@
     </ClInclude>
     <ClInclude Include="UserInterface\СlassInstanceCreator\SubjectCreator\SimpleSubjectCreator\SimpleSubjectCreator.h">
       <Filter>Исходные файлы\UserInterface\СlassInstanceCreator\SubjectCreator\SimpleSubjectCreator</Filter>
+    </ClInclude>
+    <ClInclude Include="UserInterface\VectorWithQuestionNotifier\VectorWithQuestionNotifier.h">
+      <Filter>Исходные файлы\UserInterface\VectorWithQuestionNotifier</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

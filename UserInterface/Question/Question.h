@@ -1,10 +1,7 @@
 #pragma once
 #include "../../ScheduleClasses/interfaces/ClassName.h"
+#include "../VectorWithQuestionNotifier/VectorWithQuestionNotifier.h"
 #include <string>
-#include <vector>
-
-
-#include "../../ScheduleClasses/interfaces/Teacher.h"
 
 class Question
 {
@@ -15,9 +12,9 @@ public:
 		existing
 	};
 
-	Question(const std::string& _question, const int& _typeOfAnswer);
+	Question(const std::string& question, const int& typeOfAnswer);
 	template<typename T>
-	Question(const std::string& _question, const int& _typeOfAnswer, T** selectionList, const size_t& sizeOfSelectionList);
+	Question(const std::string& qestion, const int& typeOfAnswer, VectorWithQuestionNotifier<T*>& selectionList);
 	Question(const Question& other);
 	Question(Question&& other);
 	~Question();
@@ -26,31 +23,31 @@ public:
 	const ClassName* objectFromSelectionList(const unsigned& index) const;
 	const size_t sizeOfSelectionList() const;
 	template<typename T>
-	void refillSelectionList(T** selectionList, const size_t& sizeOfSelectionList);
+	void refillSelectionList(std::vector<T*> selectionList);
 
 private:
 	std::string _question;
 	int _typeOfAnswer; 
-	ClassName** _selectionList{ nullptr };
-	size_t _sizeOfSelectionList{ 0 };
+	std::vector<ClassName*> _selectionList;
 };
 
 template<typename T>
-inline Question::Question(const std::string& question, const int& typeOfAnswer, T** selectionList, const size_t& sizeOfSelectionList) :
+inline Question::Question(const std::string& question, const int& typeOfAnswer, VectorWithQuestionNotifier<T*> selectionList) :
 	_question(question),
 	_typeOfAnswer(typeOfAnswer),
-	_sizeOfSelectionList(sizeOfSelectionList)
 {
-	refillSelectionList(selectionList, sizeOfSelectionList);
+	refillSelectionList(selectionList);
 }
 
+#include <iostream>
 template<typename T>
-inline void Question::refillSelectionList(T** selectionList, const size_t& sizeOfSelectionList)
+inline void Question::refillSelectionList(std::vector<T*> selectionList)
 {
-	delete _selectionList;
-	_selectionList = new ClassName * [sizeOfSelectionList];
-	for (size_t i = 0; i < sizeOfSelectionList; i++)
+	//not productive
+	_selectionList.clear();
+	_selectionList.reserve(selectionList.size());
+	for (auto& el : selectionList)
 	{
-		_selectionList[i] = static_cast<ClassName*>(selectionList[i]);
-	}	
+		_selectionList.emplace_back(static_cast<ClassName*>(el));
+	}
 }

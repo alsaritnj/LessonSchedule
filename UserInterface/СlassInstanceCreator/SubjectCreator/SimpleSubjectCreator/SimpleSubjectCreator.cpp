@@ -4,7 +4,7 @@ SimpleSubjectCreator::SimpleSubjectCreator(std::vector<Teacher*>& teacherList) :
 	ÑlassInstanceCreatorAncestor
 	({
 		Question("Subject name", Question::enterableByUser),
-		Question("Teacher in this subject", Question::existing, teacherList.data(), teacherList.size()),
+		Question("Teacher in this subject", Question::existing, teacherList),
 		Question("Custom nama of this object", Question::enterableByUser)
 	})
 {

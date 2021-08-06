@@ -7,17 +7,8 @@ Question::Question(const std::string& question, const int& typeOfAnswer) :
 Question::Question(const Question& other) :
 	_question(other._question),
 	_typeOfAnswer(other._typeOfAnswer),
-	_sizeOfSelectionList(other._sizeOfSelectionList),
-	_selectionList(other._selectionList == nullptr ? nullptr : new ClassName * [other._sizeOfSelectionList])
+	_selectionList(other._selectionList)
 {
-	
-	if (other._selectionList != nullptr)
-	{
-		for (size_t i = 0; i < _sizeOfSelectionList; i++)
-		{
-			this->_selectionList[i] = other._selectionList[i];
-		}
-	}
 }
 
 Question::Question(Question&& other)
@@ -27,8 +18,7 @@ Question::Question(Question&& other)
 
 Question::~Question()
 {
-	//we do not dispose of concrete ClassName objects and therefore do not delete them 
-	delete _selectionList;
+	//доделайть
 }
 
 std::string Question::question() const
@@ -48,5 +38,5 @@ const ClassName* Question::objectFromSelectionList(const unsigned& index) const
 
 const size_t Question::sizeOfSelectionList() const
 {
-	return _sizeOfSelectionList;
+	return _selectionList.size();
 }

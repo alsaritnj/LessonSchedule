@@ -178,6 +178,7 @@
     <ClInclude Include="UserInterface\interface\СlassInstanceCreator.h" />
     <ClInclude Include="UserInterface\Question\Question.h" />
     <ClInclude Include="UserInterface\UserInterface\ConsoleUserInterface\ConsoleUserInterface.h" />
+    <ClInclude Include="UserInterface\VectorWithQuestionNotifier\VectorWithQuestionNotifier.h" />
     <ClInclude Include="UserInterface\СlassInstanceCreator\ClassroomCreator\SimpleClassroomCreator\SimpleClassroomCreator.h" />
     <ClInclude Include="UserInterface\СlassInstanceCreator\DayFromScheduleCreator\SimpleDayFromScheduleCreator\SimpleDayFromScheduleCreator.h" />
     <ClInclude Include="UserInterface\СlassInstanceCreator\LessonInScheduleCreator\SimpleLessonInScheduleCreator\SimpleLessonInScheduleCreator.h" />

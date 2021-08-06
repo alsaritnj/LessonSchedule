@@ -254,11 +254,12 @@ using namespace std;
 #include "UserInterface/ÑlassInstanceCreator/SubjectCreator/SimpleSubjectCreator/SimpleSubjectCreator.h"
 #include "UserInterface/ÑlassInstanceCreator/TeacherCreator/TeacherNameCreator/TeacherNameCreator.h"
 #include "UserInterface/ÑlassInstanceCreator/ClassroomCreator\SimpleClassroomCreator/SimpleClassroomCreator.h"
+#include "UserInterface/VectorWithQuestionNotifier/VectorWithQuestionNotifier.h"
 
-vector<Classroom*> classrooms;
-vector<Teacher*> teachers;
-vector<Subject*> subjects;
-vector<LessonInSchedule*> lessons;
+VectorWithQuestionNotifier<Classroom*> classrooms;
+VectorWithQuestionNotifier<Teacher*> teachers;
+VectorWithQuestionNotifier<Subject*> subjects;
+VectorWithQuestionNotifier<LessonInSchedule*> lessons;
 
 vector<ÑlassInstanceCreator*> creators
 {
@@ -309,22 +310,22 @@ void add()
 	{
 	case 0:
 	{
-		classrooms.emplace_back(static_cast<Classroom*>(creator->create()));
+		classrooms.addBackAndNotify(static_cast<Classroom*>(creator->create()));
 		break;
 	}
 	case 1:
 	{		
-		teachers.emplace_back(static_cast<Teacher*>(creator->create()));
+		teachers.addBackAndNotify(static_cast<Teacher*>(creator->create()));
 		break;
 	}
 	case 2:
 	{
-		subjects.emplace_back(static_cast<Subject*>(creator->create()));
+		subjects.addBackAndNotify(static_cast<Subject*>(creator->create()));
 		break;
 	}
 	case 3:
 	{		
-		lessons.emplace_back(static_cast<LessonInSchedule*>(creator->create()));
+		lessons.addBackAndNotify(static_cast<LessonInSchedule*>(creator->create()));
 		break;
 	}
 	}
@@ -377,15 +378,6 @@ void print()
 	}
 }
 
-class A
-{
-public:
-	template<typename T>
-	A(T)
-	{
-		cout << "sdfg" << endl;
-	}
-};
 int main()
 {
 	while (true)
@@ -457,4 +449,6 @@ int main()
 * ïðîâåðèòü âñÿêèå êîíñòðóêòîðû è òàì äåñòðóêòîðû äà à òî îíè íèõóÿ íå ðàáîòàþò
 * 
 * question.cpp ctor of copy
+* 
+* âîçìîæíî â VectorWithQuestionNotifier íóæíû êîíñòðóêòîðû êîïèðîâàíèÿ è ïåðåìåøåíèÿ
 */
