@@ -176,6 +176,7 @@
     <ClInclude Include="ScheduleClasses\Teacher\TeacherName\TeacherName.h" />
     <ClInclude Include="UserInterface\interface\UserInterface.h" />
     <ClInclude Include="UserInterface\interface\СlassInstanceCreator.h" />
+    <ClInclude Include="UserInterface\Question\IQuestion.h" />
     <ClInclude Include="UserInterface\Question\Question.h" />
     <ClInclude Include="UserInterface\UserInterface\ConsoleUserInterface\ConsoleUserInterface.h" />
     <ClInclude Include="UserInterface\VectorWithQuestionNotifier\VectorWithQuestionNotifier.h" />

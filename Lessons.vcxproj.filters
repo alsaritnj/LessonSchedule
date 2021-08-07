@@ -258,5 +258,8 @@
     <ClInclude Include="UserInterface\VectorWithQuestionNotifier\VectorWithQuestionNotifier.h">
       <Filter>Исходные файлы\UserInterface\VectorWithQuestionNotifier</Filter>
     </ClInclude>
+    <ClInclude Include="UserInterface\Question\IQuestion.h">
+      <Filter>Исходные файлы\UserInterface\Question</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

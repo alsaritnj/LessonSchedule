@@ -378,8 +378,22 @@ void print()
 	}
 }
 
+class cl
+{
+public:
+	void method() {}
+};
+
+class cl2 : public cl
+{
+public:
+	void method()override{}
+};
+
 int main()
 {
+
+	return 0;
 	while (true)
 	{
 		system("cls");
