@@ -110,8 +110,11 @@
     <Filter Include="Исходные файлы\UserInterface\СlassInstanceCreator\LessonInScheduleCreator\SimpleLessonInScheduleCreator">
       <UniqueIdentifier>{c1879393-34df-47a9-957e-0b6ca3fc352c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Исходные файлы\UserInterface\VectorWithQuestionNotifier">
-      <UniqueIdentifier>{48afa857-0168-4859-a10a-e3111579d79e}</UniqueIdentifier>
+    <Filter Include="Исходные файлы\UserInterface\Question\QuestionWithExistingAnswer">
+      <UniqueIdentifier>{66c65437-ec0d-4c72-8b9b-e218262eda5b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\UserInterface\Question\QuestionWithAnswerEnterableByUser">
+      <UniqueIdentifier>{ea9837ff-e753-48ad-b753-17f29cca4ccf}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -148,9 +151,6 @@
     <ClCompile Include="UserInterface\СlassInstanceCreator\ClassroomCreator\SimpleClassroomCreator\SimpleClassroomCreator.cpp">
       <Filter>Исходные файлы\UserInterface\СlassInstanceCreator\ClassroomCreator\SimpleClassroomCreator</Filter>
     </ClCompile>
-    <ClCompile Include="UserInterface\Question\Question.cpp">
-      <Filter>Исходные файлы\UserInterface\Question</Filter>
-    </ClCompile>
     <ClCompile Include="UserInterface\СlassInstanceCreator\СlassInstanceCreatorAncestor\СlassInstanceCreatorAncestor.cpp">
       <Filter>Исходные файлы\UserInterface\СlassInstanceCreator\ClassInstanceCreatorAncestor</Filter>
     </ClCompile>
@@ -171,6 +171,12 @@
     </ClCompile>
     <ClCompile Include="UserInterface\СlassInstanceCreator\SubjectCreator\SimpleSubjectCreator\SimpleSubjectCreator.cpp">
       <Filter>Исходные файлы\UserInterface\СlassInstanceCreator\SubjectCreator\SimpleSubjectCreator</Filter>
+    </ClCompile>
+    <ClCompile Include="UserInterface\Question\QuestionWithExistingAnswer\QuestionWithExistingAnswer.cpp">
+      <Filter>Исходные файлы\UserInterface\Question\QuestionWithExistingAnswer</Filter>
+    </ClCompile>
+    <ClCompile Include="UserInterface\Question\QuestionWithAnswerEnterableByUser\QuestionWithAnswerEnterableByUser.cpp">
+      <Filter>Исходные файлы\UserInterface\Question\QuestionWithAnswerEnterableByUser</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -231,9 +237,6 @@
     <ClInclude Include="UserInterface\СlassInstanceCreator\ClassroomCreator\SimpleClassroomCreator\SimpleClassroomCreator.h">
       <Filter>Исходные файлы\UserInterface\СlassInstanceCreator\ClassroomCreator\SimpleClassroomCreator</Filter>
     </ClInclude>
-    <ClInclude Include="UserInterface\Question\Question.h">
-      <Filter>Исходные файлы\UserInterface\Question</Filter>
-    </ClInclude>
     <ClInclude Include="UserInterface\СlassInstanceCreator\СlassInstanceCreatorAncestor\СlassInstanceCreatorAncestor.h">
       <Filter>Исходные файлы\UserInterface\СlassInstanceCreator\ClassInstanceCreatorAncestor</Filter>
     </ClInclude>
@@ -255,11 +258,14 @@
     <ClInclude Include="UserInterface\СlassInstanceCreator\SubjectCreator\SimpleSubjectCreator\SimpleSubjectCreator.h">
       <Filter>Исходные файлы\UserInterface\СlassInstanceCreator\SubjectCreator\SimpleSubjectCreator</Filter>
     </ClInclude>
-    <ClInclude Include="UserInterface\VectorWithQuestionNotifier\VectorWithQuestionNotifier.h">
-      <Filter>Исходные файлы\UserInterface\VectorWithQuestionNotifier</Filter>
+    <ClInclude Include="UserInterface\interface\Question.h">
+      <Filter>Исходные файлы\UserInterface\interfaces</Filter>
     </ClInclude>
-    <ClInclude Include="UserInterface\Question\IQuestion.h">
-      <Filter>Исходные файлы\UserInterface\Question</Filter>
+    <ClInclude Include="UserInterface\Question\QuestionWithExistingAnswer\QuestionWithExistingAnswer.h">
+      <Filter>Исходные файлы\UserInterface\Question\QuestionWithExistingAnswer</Filter>
+    </ClInclude>
+    <ClInclude Include="UserInterface\Question\QuestionWithAnswerEnterableByUser\QuestionWithAnswerEnterableByUser.h">
+      <Filter>Исходные файлы\UserInterface\Question\QuestionWithAnswerEnterableByUser</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

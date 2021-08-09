@@ -5,7 +5,7 @@
 class SimpleSubjectCreator : public ÑlassInstanceCreatorAncestor
 {
 public:
-	SimpleSubjectCreator(std::vector<Teacher*>& teacherList);
+	SimpleSubjectCreator(VectorWithQuestionNotifier<Teacher*>& teacherList);
 	void* create() const override;
 	void setAnswer(const short& index, void* answer) override;
 	std::string nameOfCreatableClass() const;

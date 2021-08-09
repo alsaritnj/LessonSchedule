@@ -254,7 +254,6 @@ using namespace std;
 #include "UserInterface/ÑlassInstanceCreator/SubjectCreator/SimpleSubjectCreator/SimpleSubjectCreator.h"
 #include "UserInterface/ÑlassInstanceCreator/TeacherCreator/TeacherNameCreator/TeacherNameCreator.h"
 #include "UserInterface/ÑlassInstanceCreator/ClassroomCreator\SimpleClassroomCreator/SimpleClassroomCreator.h"
-#include "UserInterface/VectorWithQuestionNotifier/VectorWithQuestionNotifier.h"
 
 VectorWithQuestionNotifier<Classroom*> classrooms;
 VectorWithQuestionNotifier<Teacher*> teachers;
@@ -264,10 +263,10 @@ VectorWithQuestionNotifier<LessonInSchedule*> lessons;
 vector<ÑlassInstanceCreator*> creators
 {
 	new SimpleClassroomCreator(),
-	new TeacherNameCreator(),
-	new TeacherInitialsNameCreator(),
-	new SimpleSubjectCreator(teachers),
-	new SimpleLessonInScheduleCreator(subjects, classrooms)
+	//new TeacherNameCreator(),
+	//new TeacherInitialsNameCreator(),
+	//new SimpleSubjectCreator(teachers),
+	//new SimpleLessonInScheduleCreator(subjects, classrooms)
 };
 
 void add()
@@ -378,22 +377,19 @@ void print()
 	}
 }
 
-class cl
+
+class v : public std::vector<int>
 {
 public:
-	void method() {}
+	//void emplace_back() override
+	{
+		this->emplace_back
+	}
 };
 
-class cl2 : public cl
-{
-public:
-	void method()override{}
-};
 
 int main()
 {
-
-	return 0;
 	while (true)
 	{
 		system("cls");

@@ -147,7 +147,8 @@
     <ClCompile Include="ScheduleClasses\Teacher\TeacherInitialsName\TeacherInitialsName.cpp" />
     <ClCompile Include="ScheduleClasses\Teacher\TeacherName\TeacherName.cpp" />
     <ClCompile Include="Source.cpp" />
-    <ClCompile Include="UserInterface\Question\Question.cpp" />
+    <ClCompile Include="UserInterface\Question\QuestionWithAnswerEnterableByUser\QuestionWithAnswerEnterableByUser.cpp" />
+    <ClCompile Include="UserInterface\Question\QuestionWithExistingAnswer\QuestionWithExistingAnswer.cpp" />
     <ClCompile Include="UserInterface\UserInterface\ConsoleUserInterface\ConsoleUserInterface.cpp" />
     <ClCompile Include="UserInterface\СlassInstanceCreator\ClassroomCreator\SimpleClassroomCreator\SimpleClassroomCreator.cpp" />
     <ClCompile Include="UserInterface\СlassInstanceCreator\DayFromScheduleCreator\SimpleDayFromScheduleCreator\SimpleDayFromScheduleCreator.cpp" />
@@ -174,12 +175,12 @@
     <ClInclude Include="ScheduleClasses\Subject\SimpleSubject\SimpleSubject.h" />
     <ClInclude Include="ScheduleClasses\Teacher\TeacherInitialsName\TeacherInitialsName.h" />
     <ClInclude Include="ScheduleClasses\Teacher\TeacherName\TeacherName.h" />
+    <ClInclude Include="UserInterface\interface\Question.h" />
     <ClInclude Include="UserInterface\interface\UserInterface.h" />
     <ClInclude Include="UserInterface\interface\СlassInstanceCreator.h" />
-    <ClInclude Include="UserInterface\Question\IQuestion.h" />
-    <ClInclude Include="UserInterface\Question\Question.h" />
+    <ClInclude Include="UserInterface\Question\QuestionWithAnswerEnterableByUser\QuestionWithAnswerEnterableByUser.h" />
+    <ClInclude Include="UserInterface\Question\QuestionWithExistingAnswer\QuestionWithExistingAnswer.h" />
     <ClInclude Include="UserInterface\UserInterface\ConsoleUserInterface\ConsoleUserInterface.h" />
-    <ClInclude Include="UserInterface\VectorWithQuestionNotifier\VectorWithQuestionNotifier.h" />
     <ClInclude Include="UserInterface\СlassInstanceCreator\ClassroomCreator\SimpleClassroomCreator\SimpleClassroomCreator.h" />
     <ClInclude Include="UserInterface\СlassInstanceCreator\DayFromScheduleCreator\SimpleDayFromScheduleCreator\SimpleDayFromScheduleCreator.h" />
     <ClInclude Include="UserInterface\СlassInstanceCreator\LessonInScheduleCreator\SimpleLessonInScheduleCreator\SimpleLessonInScheduleCreator.h" />

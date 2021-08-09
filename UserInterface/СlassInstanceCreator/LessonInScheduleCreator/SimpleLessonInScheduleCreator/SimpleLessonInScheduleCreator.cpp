@@ -1,6 +1,6 @@
 #include "SimpleLessonInScheduleCreator.h"
 
-SimpleLessonInScheduleCreator::SimpleLessonInScheduleCreator(std::vector<Subject*>& subjectList, std::vector<Classroom*>& classroomList) :
+SimpleLessonInScheduleCreator::SimpleLessonInScheduleCreator(VectorWithQuestionNotifier<Subject*>& subjectList, VectorWithQuestionNotifier<Classroom*>& classroomList) :
 	ÑlassInstanceCreatorAncestor
 	({
 		Question("Subject", Question::existing, subjectList),

@@ -5,7 +5,7 @@
 class SimpleLessonInScheduleCreator : public ÑlassInstanceCreatorAncestor
 {
 public:
-	SimpleLessonInScheduleCreator(std::vector<Subject*>& subjectList, std::vector<Classroom*>& classroomList);
+	SimpleLessonInScheduleCreator(VectorWithQuestionNotifier<Subject*>& subjectList, VectorWithQuestionNotifier<Classroom*>& classroomList);
 	~SimpleLessonInScheduleCreator();
 	void* create() const override;
 	void setAnswer(const short& index, void* answer) override;

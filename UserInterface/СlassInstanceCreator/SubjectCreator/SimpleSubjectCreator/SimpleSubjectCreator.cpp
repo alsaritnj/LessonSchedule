@@ -1,6 +1,6 @@
 #include "SimpleSubjectCreator.h"
 
-SimpleSubjectCreator::SimpleSubjectCreator(std::vector<Teacher*>& teacherList) :
+SimpleSubjectCreator::SimpleSubjectCreator(VectorWithQuestionNotifier<Teacher*>& teacherList) :
 	ÑlassInstanceCreatorAncestor
 	({
 		Question("Subject name", Question::enterableByUser),
