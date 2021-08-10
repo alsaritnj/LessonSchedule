@@ -1,396 +1,153 @@
 #include <iostream>
 using namespace std;
-//Õ≈ ”ƒ¿Àﬂ“‹, Õ≈ –¿«Œ¡–¿¬ÿ»—‹
 
-
-//class Created
+//#include "UserInterface/—lassInstanceCreator/TeacherCreator/TeacherInitialsNameCreator/TeacherInitialsNameCreator.h"
+//#include "UserInterface/—lassInstanceCreator/LessonInScheduleCreator/SimpleLessonInScheduleCreator/SimpleLessonInScheduleCreator.h"
+//#include "ScheduleClasses/Subject/SimpleSubject/SimpleSubject.h"
+//#include "ScheduleClasses/Classroom/SimpleClassroom/SimpleClassroom.h"
+//#include "ScheduleClasses/Teacher/TeacherName/TeacherName.h"
+//#include "UserInterface/—lassInstanceCreator/SubjectCreator/SimpleSubjectCreator/SimpleSubjectCreator.h"
+//#include "UserInterface/—lassInstanceCreator/TeacherCreator/TeacherNameCreator/TeacherNameCreator.h"
+//#include "UserInterface/—lassInstanceCreator/ClassroomCreator\SimpleClassroomCreator/SimpleClassroomCreator.h"
+//
+//VectorWithQuestionNotifier<Classroom*> classrooms;
+//VectorWithQuestionNotifier<Teacher*> teachers;
+//VectorWithQuestionNotifier<Subject*> subjects;
+//VectorWithQuestionNotifier<LessonInSchedule*> lessons;
+//
+//vector<—lassInstanceCreator*> creators
 //{
-//public:
-//	virtual string someMethod() = 0;
+//	new SimpleClassroomCreator(),
+//	new TeacherNameCreator(),
+//	new TeacherInitialsNameCreator(),
+//	new SimpleSubjectCreator(teachers),
+//	new SimpleLessonInScheduleCreator(subjects, classrooms)
 //};
 //
-//class Creator
+//void add()
 //{
-//public:
-//	virtual Created* create() = 0;
-//	virtual string ask(int index) = 0;
-//	virtual void setParams(int index, string param) = 0;
-//	virtual int count() = 0;
-//	virtual string asString() = 0;
-//};
-//
-//class UserInterface
-//{
-//public:
-//	virtual void create() = 0;
-//};
-//
-//class TypeA : public Created
-//{
-//	int a;
-//public:
-//	TypeA(int a)
+//	string input;
+//	int index;
+//	cout << "What you want to create?:" << endl;
+//	for (size_t i = 0; i < creators.size(); i++)
 //	{
-//		this->a = a;
+//		cout << i << ". " << creators[i]->nameOfCreatableClass() << endl;
 //	}
-//	string someMethod() override { return to_string(a); }
-//};
-//class TypeB : public Created
-//{
-//	string a;
-//public:
-//	TypeB(string a)
+//	cin >> index;
+//	—lassInstanceCreator* creator = creators[index];
+//	for (size_t i = 0; i < creator->getCountOfQuestions(); i++)
 //	{
-//		this->a = a;
-//	}
-//	string someMethod() override { return a; }
-//};
-//class TypeC : public Created
-//{
-//	string a;
-//	int b;
-//public:
-//	TypeC(string a, int b)
-//	{
-//		this->a = a;
-//		this->b = b;
-//	}
-//	string someMethod() override { return a + ' ' + to_string(b); }
-//};
-//
-//class ACreator : public Creator
-//{
-//	vector<string> asks
-//	{
-//		"A params?"
-//	};
-//	vector<string> params
-//	{
-//		""
-//	};
-//public:
-//	Created* create()
-//	{
-//		return new TypeA(atoi(params[0].c_str()));
-//	}
-//	string ask(int index) override { return asks[index]; }
-//	void setParams(int index, string param)override 
-//	{
-//		params[index] = param; 
-//	}
-//	int count() { return 1; }
-//	string asString() { return "ACreator"; }
-//};
-//class BCreator : public Creator
-//{
-//	vector<string> asks
-//	{
-//		"B params?"
-//	};
-//	vector<string> params
-//	{
-//		""
-//	};
-//public:
-//	Created* create()
-//	{
-//		return new TypeB(params[0]);
-//	}
-//	string ask(int index) override { return asks[index]; }
-//	void setParams(int index, string param)override { params[index] = param; }
-//	int count() { return 1; }
-//	string asString() { return "BCretor"; }
-//};
-//class CCreator : public Creator
-//{
-//	vector<string> asks
-//	{
-//		"C str params?",
-//		"C int params?"
-//	};
-//	vector<string> params{ 2 };
-//public:
-//	Created* create()
-//	{
-//		return new TypeC(params[0], atoi(params[1].c_str()));
-//	}
-//	string ask(int index) override { return asks[index]; }
-//	void setParams(int index, string param)override { params[index] = param; }
-//	int count() { return 2; }
-//	string asString() { return "CCretor"; }
-//};
-//
-//class ConsoleUserInteface : UserInterface
-//{
-//	vector<Creator*> creators
-//	{
-//		new ACreator,
-//		new BCreator,
-//		new CCreator
-//	};
-//	vector<Created*> createds;
-//public:
-//	void showAllCreateds()
-//	{
-//		for (auto& el : createds)
-//			cout << el->someMethod() << endl;
-//	}
-//	void create() 
-//	{
-//		string userChoose;
-//		cout << "Choose need creator " << endl;
-//		for (size_t i = 0; i < creators.size(); i++)
+//		if (creator->getQuestion(i).typeOfAnswer() == Question::enterableByUser)
 //		{
-//			cout << i+1 << " " << creators[i]->asString() << endl;
+//			cout << creator->getQuestion(i).question() << ": ";
+//			cin >> input;
+//			creator->setAnswer(i, &input);
 //		}
-//		cin >> userChoose;
-//		Creator& creator = *creators[atoi(userChoose.c_str()) - 1];
-//		for (size_t i = 0; i < creator.count(); i++)
+//		else if (creator->getQuestion(i).typeOfAnswer() == Question::existing)
 //		{
-//			cout << creator.ask(i) << endl;
-//			cin >> userChoose;
-//			creator.setParams(i, userChoose);
-//		}
-//		createds.emplace_back(creator.create());
-//	}
-//	~ConsoleUserInteface()
-//	{
-//		for (auto el : creators)
-//			delete el;
-//		for (auto el : createds)
-//			delete el;
-//	}
-//};
-//int main()
-//{
-//	/*string choose;
-//	ConsoleUserInteface CUI;
-//	while (true)
-//	{
-//		cin >> choose;
-//		if (choose == "create")
-//		{
-//			CUI.create();
-//		}
-//		else if (choose == "show")
-//		{
-//			CUI.showAllCreateds();
-//		}
-//		else if (choose == "exit")
-//		{
-//			return 0;
-//		}
-//		else if (choose == "clear")
-//			system("cls");
-//		Sleep(10);
-//	}*/
-//	map<int, string> days
-//	{
-//		pair<int, string>(1, "monday"),
-//		pair<int, string>(2, "tuesday"),
-//		pair<int, string>(3, "wensday"),
-//		pair<int, string>(4, "thursday"),
-//		pair<int, string>(5, "friday"),
-//	};
-//
-//	setlocale(LC_ALL, "ru");
-//
-//	FiveDaySchedule sc;
-//	sc.addTeacher(new TeacherName(" ËËÎÓ‚", "¬‡ÒËÎ¸Â‚"));
-//	sc.addTeacher(new TeacherName("¬Î‡‰ÏËÓ‚‡", "—ÓÙËˇ"));
-//	sc.addSubject(new SimpleSubject("–ÛÒÒÍËÈ", sc.getTeacher(0)));
-//	sc.addSubject(new SimpleSubject(" ËËÎËˆ‡", sc.getTeacher(1)));
-//	sc.addClassroom(new SimpleClassroom(15));
-//	for (size_t i = 1; i < 6; i++)
-//		sc.addDay(new SimpleDayFromSchedule(
+//			cout << "Choose object from list:" << endl;
+//			for (size_t j = 0; j < creator->getQuestion(i).sizeOfSelectionList(); j++)
 //			{
-//				new SimpleLessonInSchedule(sc.getSubject(0), sc.getClassroom(0), 1),
-//				new SimpleLessonInSchedule(sc.getSubject(1), sc.getClassroom(0), 2),
-//			}), i);
-//	
-//	sc[3].add(new SimpleLessonInSchedule(sc.getSubject(0), sc.getClassroom(0), 3));
-//
-//	for (size_t i = 1; i < 6; i++)
-//	{
-//		cout << days[i] << endl;
-//		for (size_t j = 1; j < sc[i].countOfLessons() + 1; j++)
-//		{
-//			cout << sc[i][j].getNumberInSchedule() << ' ' <<
-//				sc[i][j].getSubjectName() << '\t' <<
-//				sc[i][j].getTeacher().getSurname() << ' ' << sc[i][j].getTeacher().getName() << '\t' <<
-//				sc[i][j].getClassroomNumber() << endl;
-//		}
-//	}
-//
-//	/*cout << "\n\n\n";
-//	sc.delTeacher(0);
-//	for (size_t i = 1; i < 6; i++)
-//	{
-//		cout << days[i] << endl;
-//		for (size_t j = 1; j < sc[i].countOfLessons() + 1; j++)
-//		{
-//			try
-//			{
-//				cout << sc[i][j].getNumberInSchedule() << ' ' <<
-//					sc[i][j].getSubjectName() << '\t' <<
-//					sc[i][j].getTeacher().getSurname() << ' ' << sc[i][j].getTeacher().getName() << '\t' <<
-//					sc[i][j].getClassroomNumber() << endl;
+//				cout << j << ". " << creator->getQuestion(i).objectFromSelectionList(j)->customClassName() << endl;
 //			}
-//			catch (exception ex)
-//			{
-//				cout << ex.what() << endl;
-//			}
+//			cin >> index;
+//			creator->setAnswer(i, const_cast<void*>(static_cast<const void*>(creator->getQuestion(i).objectFromSelectionList(index))));
 //		}
-//	}*/
+//	}
+//	cout << "kuda?" << endl;
+//	cout << "0. Classroom" << endl;
+//	cout << "1. Teacher" << endl;
+//	cout << "2. Subject" << endl;
+//	cout << "3. LessonInSchedule" << endl;
+//	cin >> index;
+//	switch (index)
+//	{
+//	case 0:
+//	{
+//		classrooms.addBackAndNotify(static_cast<Classroom*>(creator->create()));
+//		break;
+//	}
+//	case 1:
+//	{		
+//		teachers.addBackAndNotify(static_cast<Teacher*>(creator->create()));
+//		break;
+//	}
+//	case 2:
+//	{
+//		subjects.addBackAndNotify(static_cast<Subject*>(creator->create()));
+//		break;
+//	}
+//	case 3:
+//	{		
+//		lessons.addBackAndNotify(static_cast<LessonInSchedule*>(creator->create()));
+//		break;
+//	}
+//	}
+//}
 //
-//	return 0;
+//void print()
+//{
+//	int index;
+//	cout << "chto?" << endl;
+//	cout << "0. Classroom" << endl;
+//	cout << "1. Teacher" << endl;
+//	cout << "2. Subject" << endl;
+//	cout << "3. LessonInSchedule" << endl;
+//	cin >> index;
+//	switch (index)
+//	{
+//	case 0:
+//	{
+//		for (auto el : classrooms)
+//		{
+//			cout << "CLASS NAME:  " << el->className() << " \nCLASS CONTENT: " << el->classContent() << " \n CUSTOM CLASS NAME: " << el->customClassName() << endl;
+//		}
+//		break;
+//	}
+//	case 1:
+//	{
+//		for (auto el : teachers)
+//		{
+//			cout << "CLASS NAME:  " << el->className() << " \nCLASS CONTENT: " << el->classContent() << " \n CUSTOM CLASS NAME: " << el->customClassName() << endl;
+//		}
+//		break;
+//	}
+//	case 2:
+//	{
+//		for (auto el : subjects)
+//		{
+//			cout << "CLASS NAME:  " << el->className() << " \nCLASS CONTENT: " << el->classContent() << " \n CUSTOM CLASS NAME: " << el->customClassName() << endl;
+//		}
+//		break;
+//	}
+//	case 3:
+//	{
+//		
+//		for (auto el : lessons)
+//		{
+//			cout << "CLASS NAME:  " << el->className() << " \nCLASS CONTENT: " << el->classContent() << " \n CUSTOM CLASS NAME: " << el->customClassName() << endl;
+//		}
+//		break;
+//	}
+//	}
 //}
 
-#include "UserInterface/—lassInstanceCreator/TeacherCreator/TeacherInitialsNameCreator/TeacherInitialsNameCreator.h"
-#include "UserInterface/—lassInstanceCreator/LessonInScheduleCreator/SimpleLessonInScheduleCreator/SimpleLessonInScheduleCreator.h"
-#include "ScheduleClasses/Subject/SimpleSubject/SimpleSubject.h"
-#include "ScheduleClasses/Classroom/SimpleClassroom/SimpleClassroom.h"
-#include "ScheduleClasses/Teacher/TeacherName/TeacherName.h"
-#include "UserInterface/—lassInstanceCreator/SubjectCreator/SimpleSubjectCreator/SimpleSubjectCreator.h"
-#include "UserInterface/—lassInstanceCreator/TeacherCreator/TeacherNameCreator/TeacherNameCreator.h"
-#include "UserInterface/—lassInstanceCreator/ClassroomCreator\SimpleClassroomCreator/SimpleClassroomCreator.h"
-
-VectorWithQuestionNotifier<Classroom*> classrooms;
-VectorWithQuestionNotifier<Teacher*> teachers;
-VectorWithQuestionNotifier<Subject*> subjects;
-VectorWithQuestionNotifier<LessonInSchedule*> lessons;
-
-vector<—lassInstanceCreator*> creators
-{
-	new SimpleClassroomCreator(),
-	//new TeacherNameCreator(),
-	//new TeacherInitialsNameCreator(),
-	//new SimpleSubjectCreator(teachers),
-	//new SimpleLessonInScheduleCreator(subjects, classrooms)
-};
-
-void add()
-{
-	string input;
-	int index;
-	cout << "What you want to create?:" << endl;
-	for (size_t i = 0; i < creators.size(); i++)
-	{
-		cout << i << ". " << creators[i]->nameOfCreatableClass() << endl;
-	}
-	cin >> index;
-	—lassInstanceCreator* creator = creators[index];
-	for (size_t i = 0; i < creator->getCountOfQuestions(); i++)
-	{
-		if (creator->getQuestion(i).typeOfAnswer() == Question::enterableByUser)
-		{
-			cout << creator->getQuestion(i).question() << ": ";
-			cin >> input;
-			creator->setAnswer(i, &input);
-		}
-		else if (creator->getQuestion(i).typeOfAnswer() == Question::existing)
-		{
-			cout << "Choose object from list:" << endl;
-			for (size_t j = 0; j < creator->getQuestion(i).sizeOfSelectionList(); j++)
-			{
-				cout << j << ". " << creator->getQuestion(i).objectFromSelectionList(j)->customClassName() << endl;
-			}
-			cin >> index;
-			creator->setAnswer(i, const_cast<void*>(static_cast<const void*>(creator->getQuestion(i).objectFromSelectionList(index))));
-		}
-	}
-	cout << "kuda?" << endl;
-	cout << "0. Classroom" << endl;
-	cout << "1. Teacher" << endl;
-	cout << "2. Subject" << endl;
-	cout << "3. LessonInSchedule" << endl;
-	cin >> index;
-	switch (index)
-	{
-	case 0:
-	{
-		classrooms.addBackAndNotify(static_cast<Classroom*>(creator->create()));
-		break;
-	}
-	case 1:
-	{		
-		teachers.addBackAndNotify(static_cast<Teacher*>(creator->create()));
-		break;
-	}
-	case 2:
-	{
-		subjects.addBackAndNotify(static_cast<Subject*>(creator->create()));
-		break;
-	}
-	case 3:
-	{		
-		lessons.addBackAndNotify(static_cast<LessonInSchedule*>(creator->create()));
-		break;
-	}
-	}
-}
-
-void print()
-{
-	int index;
-	cout << "chto?" << endl;
-	cout << "0. Classroom" << endl;
-	cout << "1. Teacher" << endl;
-	cout << "2. Subject" << endl;
-	cout << "3. LessonInSchedule" << endl;
-	cin >> index;
-	switch (index)
-	{
-	case 0:
-	{
-		for (auto el : classrooms)
-		{
-			cout << "CLASS NAME:  " << el->className() << " \nCLASS CONTENT: " << el->classContent() << " \n CUSTOM CLASS NAME: " << el->customClassName() << endl;
-		}
-		break;
-	}
-	case 1:
-	{
-		for (auto el : teachers)
-		{
-			cout << "CLASS NAME:  " << el->className() << " \nCLASS CONTENT: " << el->classContent() << " \n CUSTOM CLASS NAME: " << el->customClassName() << endl;
-		}
-		break;
-	}
-	case 2:
-	{
-		for (auto el : subjects)
-		{
-			cout << "CLASS NAME:  " << el->className() << " \nCLASS CONTENT: " << el->classContent() << " \n CUSTOM CLASS NAME: " << el->customClassName() << endl;
-		}
-		break;
-	}
-	case 3:
-	{
-		
-		for (auto el : lessons)
-		{
-			cout << "CLASS NAME:  " << el->className() << " \nCLASS CONTENT: " << el->classContent() << " \n CUSTOM CLASS NAME: " << el->customClassName() << endl;
-		}
-		break;
-	}
-	}
-}
-
-
-class v : public std::vector<int>
-{
-public:
-	//void emplace_back() override
-	{
-		this->emplace_back
-	}
-};
-
-
+#include "UserInterface/—lassInstanceCreator/ClassroomCreator/SimpleClassroomCreator/SimpleClassroomCreator.h"
+#include <string>
 int main()
 {
-	while (true)
+	SimpleClassroomCreator scc;
+	for (size_t i = 0; i < scc.getCountOfQuestions(); i++)
+	{
+		cout << scc.getQuestion(i).getQuestion() << endl;
+		string answer;
+		cin >> answer;
+		scc.setAnswer(i, static_cast<void*>(&answer));
+	}
+	SimpleClassroom sc = *static_cast<SimpleClassroom*>(scc.create());
+	cout << sc.getClassroomNumber() << "  " << sc.customClassName() << endl;
+	return 0;
+	/*while (true)
 	{
 		system("cls");
 		int a;
@@ -417,7 +174,7 @@ int main()
 				return 0;
 			}
 		}
-	}
+	}*/
 
 
 	/*—lassInstanceCreator* creator;

@@ -7,10 +7,10 @@ std::string QuestionWithExistingAnswer::getQuestion() const
 	* когда нужно(к примеру, если selectionList был обновлен) этот метод будет перезаписывать строку
 	*/
 	std::string tempString = "Choose one of the object:";
-	for (size_t i = 0; i < selectionList.size(); i++)
+	for (size_t i = 0; i < vector.size(); i++)
 	{
 		//fuck the efficiency :(
-		tempString += "\n" + std::to_string(i) + ". " + selectionList[i]->className() + " " + selectionList[i]->customClassName();
+		tempString += "\n" + std::to_string(i) + ". " + vector[i]->className() + " " + vector[i]->customClassName();
 	}
 	return tempString;
 }

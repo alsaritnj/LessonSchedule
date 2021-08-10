@@ -1,9 +1,8 @@
 #pragma once
 #include "../../interface/Question.h"
-#include "../../../ScheduleClasses/interfaces/ClassName.h"
-#include <vector>
+#include "../../VectorOfClassNameObserver/ObserverForAnVectorOfClassName.h"
 
-class QuestionWithExistingAnswer : public Question
+class QuestionWithExistingAnswer : public Question, public ObserverForAnVectorOfClassName
 {
 public:
 	template<typename T>
@@ -12,7 +11,6 @@ public:
 
 private:
 	std::string question{};
-	std::vector<ClassName*> selectionList{};
 };
 
 template<typename T>

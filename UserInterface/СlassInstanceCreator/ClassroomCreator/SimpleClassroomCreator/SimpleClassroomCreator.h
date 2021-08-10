@@ -1,6 +1,7 @@
 #pragma once
 #include "../../ÑlassInstanceCreatorAncestor/ÑlassInstanceCreatorAncestor.h"
 #include "../../../../ScheduleClasses/Classroom/SimpleClassroom/SimpleClassroom.h"
+#include "../../../Question/QuestionWithAnswerEnterableByUser/QuestionWithAnswerEnterableByUser.h"
 
 
 class SimpleClassroomCreator : public ÑlassInstanceCreatorAncestor

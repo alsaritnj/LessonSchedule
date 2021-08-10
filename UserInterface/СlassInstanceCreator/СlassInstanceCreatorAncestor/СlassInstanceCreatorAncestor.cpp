@@ -1,22 +1,22 @@
 #include "ÑlassInstanceCreatorAncestor.h"
 
-ÑlassInstanceCreatorAncestor::ÑlassInstanceCreatorAncestor(const std::vector<Question>& questions) :
+ÑlassInstanceCreatorAncestor::ÑlassInstanceCreatorAncestor(const std::vector<Question*>& questions) :
 	questions(questions)
 {
 }
-#include <iostream>//dell
-ÑlassInstanceCreatorAncestor::~ÑlassInstanceCreatorAncestor()//dell
+
+ÑlassInstanceCreatorAncestor::~ÑlassInstanceCreatorAncestor()
 {
-	std::cout << "~ÑlassInstanceCreatorAncestor" << std::endl;
+
 	for (auto el : questions)
 	{
-		el.~Question();
+		delete el;
 	}
 }
 
-Question ÑlassInstanceCreatorAncestor::getQuestion(const short& index) const
+const Question& ÑlassInstanceCreatorAncestor::getQuestion(const short& index) const
 {
-	return questions[index];
+	return *questions[index];
 }
 
 unsigned ÑlassInstanceCreatorAncestor::getCountOfQuestions() const

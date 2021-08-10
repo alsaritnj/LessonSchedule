@@ -3,8 +3,8 @@
 SimpleClassroomCreator::SimpleClassroomCreator() : 
 	ÑlassInstanceCreatorAncestor
 	({
-		Question("Number or name of classroom", Question::enterableByUser),
-		Question("Custom name of this object", Question::enterableByUser)
+		new QuestionWithAnswerEnterableByUser("Number or name of classroom"),
+		new QuestionWithAnswerEnterableByUser("Custom name of this object")
 	})
 {
 }
