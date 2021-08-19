@@ -9,7 +9,7 @@ class SimpleClassroomCreator : public ÑlassInstanceCreatorAncestor
 public:
 	SimpleClassroomCreator();
 	void* create() const override;
-	void setAnswer(const short& index, void* answer) override;
+	void setAnswer(const short& index, const std::string& answer) override;
 	std::string nameOfCreatableClass() const;
 
 protected:

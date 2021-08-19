@@ -116,6 +116,9 @@
     <Filter Include="Исходные файлы\UserInterface\Question\QuestionWithAnswerEnterableByUser">
       <UniqueIdentifier>{ea9837ff-e753-48ad-b753-17f29cca4ccf}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\UserInterface\VectorOfClassNameObserver">
+      <UniqueIdentifier>{a0ad35b8-a769-4a47-ba24-891bc55292fe}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp">
@@ -177,6 +180,9 @@
     </ClCompile>
     <ClCompile Include="UserInterface\Question\QuestionWithAnswerEnterableByUser\QuestionWithAnswerEnterableByUser.cpp">
       <Filter>Исходные файлы\UserInterface\Question\QuestionWithAnswerEnterableByUser</Filter>
+    </ClCompile>
+    <ClCompile Include="UserInterface\VectorOfClassNameObserver\NotifierForAnVectorOfClassName.cpp">
+      <Filter>Исходные файлы\UserInterface\VectorOfClassNameObserver</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -266,6 +272,15 @@
     </ClInclude>
     <ClInclude Include="UserInterface\Question\QuestionWithAnswerEnterableByUser\QuestionWithAnswerEnterableByUser.h">
       <Filter>Исходные файлы\UserInterface\Question\QuestionWithAnswerEnterableByUser</Filter>
+    </ClInclude>
+    <ClInclude Include="UserInterface\VectorOfClassNameObserver\NotifierForAnVectorOfClassName.h">
+      <Filter>Исходные файлы\UserInterface\VectorOfClassNameObserver</Filter>
+    </ClInclude>
+    <ClInclude Include="UserInterface\VectorOfClassNameObserver\ObserverForAnVectorOfClassName.h">
+      <Filter>Исходные файлы\UserInterface\VectorOfClassNameObserver</Filter>
+    </ClInclude>
+    <ClInclude Include="UserInterface\VectorOfClassNameObserver\VectorWithNotifier.h">
+      <Filter>Исходные файлы\UserInterface\VectorOfClassNameObserver</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

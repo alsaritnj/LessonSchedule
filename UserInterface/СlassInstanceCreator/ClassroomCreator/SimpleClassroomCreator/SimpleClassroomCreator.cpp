@@ -14,9 +14,9 @@ void* SimpleClassroomCreator::create() const
 	return new SimpleClassroom(answers[0], answers[1]);
 }
 
-void SimpleClassroomCreator::setAnswer(const short& index, void* answer)
+void SimpleClassroomCreator::setAnswer(const short& index, const std::string& answer)
 {
-	answers[index] = *static_cast<std::string*>(answer);
+	answers[index] = answer;
 }
 
 std::string SimpleClassroomCreator::nameOfCreatableClass() const

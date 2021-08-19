@@ -8,10 +8,10 @@
 class SimpleDayFromSchedule : public DayFromSchedule
 {
 public:
-	SimpleDayFromSchedule(std::initializer_list<LessonInSchedule*> lessonsInSchedule, const std::string& customClassName = "");
+	SimpleDayFromSchedule(std::initializer_list<const LessonInSchedule*> lessonsInSchedule, const std::string& customClassName = "");
 	~SimpleDayFromSchedule();
 	const LessonInSchedule& operator[](const unsigned int& numberOfLessonInSchedule) override;
-	void add(LessonInSchedule* added) override;
+	void add(const LessonInSchedule& added) override;
 	void del(const unsigned int& numberOfLessonInSchedule) override;
 	unsigned countOfLessons() const override;
 

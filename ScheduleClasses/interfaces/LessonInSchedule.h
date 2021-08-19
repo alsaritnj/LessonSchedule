@@ -11,8 +11,7 @@ public:
 	virtual std::string getSubjectName() const = 0;
 	virtual std::string getClassroomNumber() const = 0;
 	virtual short int getNumberInSchedule() const = 0;
-	virtual void setTeacher(Teacher& teacher) = 0;
-	virtual void setSubjectName(const std::string& subjectName) = 0;
+	virtual void setSubject(Subject& subjectName) = 0;
 	virtual void setClassroomNumber(Classroom& classroom) = 0;
 	virtual void setNumberInSchedule(const short int& numberInSchedule) = 0;
 

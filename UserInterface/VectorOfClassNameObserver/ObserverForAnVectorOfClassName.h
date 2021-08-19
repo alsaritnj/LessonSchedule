@@ -16,9 +16,10 @@ protected:
 template<typename T>
 inline void ObserverForAnVectorOfClassName::update(std::vector<T> vector)
 {
+	this->vector.clear();
 	this->vector.reserve(vector.size());
-	for (size_t i = 0; i < vector.size(); i++)
+	for (auto& el : vector)
 	{
-		this->vector[i] = static_cast<ClassName*>(vector[i]);
+		this->vector.emplace_back(el);
 	}
 }

@@ -150,6 +150,7 @@
     <ClCompile Include="UserInterface\Question\QuestionWithAnswerEnterableByUser\QuestionWithAnswerEnterableByUser.cpp" />
     <ClCompile Include="UserInterface\Question\QuestionWithExistingAnswer\QuestionWithExistingAnswer.cpp" />
     <ClCompile Include="UserInterface\UserInterface\ConsoleUserInterface\ConsoleUserInterface.cpp" />
+    <ClCompile Include="UserInterface\VectorOfClassNameObserver\NotifierForAnVectorOfClassName.cpp" />
     <ClCompile Include="UserInterface\СlassInstanceCreator\ClassroomCreator\SimpleClassroomCreator\SimpleClassroomCreator.cpp" />
     <ClCompile Include="UserInterface\СlassInstanceCreator\DayFromScheduleCreator\SimpleDayFromScheduleCreator\SimpleDayFromScheduleCreator.cpp" />
     <ClCompile Include="UserInterface\СlassInstanceCreator\LessonInScheduleCreator\SimpleLessonInScheduleCreator\SimpleLessonInScheduleCreator.cpp" />
@@ -181,6 +182,9 @@
     <ClInclude Include="UserInterface\Question\QuestionWithAnswerEnterableByUser\QuestionWithAnswerEnterableByUser.h" />
     <ClInclude Include="UserInterface\Question\QuestionWithExistingAnswer\QuestionWithExistingAnswer.h" />
     <ClInclude Include="UserInterface\UserInterface\ConsoleUserInterface\ConsoleUserInterface.h" />
+    <ClInclude Include="UserInterface\VectorOfClassNameObserver\NotifierForAnVectorOfClassName.h" />
+    <ClInclude Include="UserInterface\VectorOfClassNameObserver\ObserverForAnVectorOfClassName.h" />
+    <ClInclude Include="UserInterface\VectorOfClassNameObserver\VectorWithNotifier.h" />
     <ClInclude Include="UserInterface\СlassInstanceCreator\ClassroomCreator\SimpleClassroomCreator\SimpleClassroomCreator.h" />
     <ClInclude Include="UserInterface\СlassInstanceCreator\DayFromScheduleCreator\SimpleDayFromScheduleCreator\SimpleDayFromScheduleCreator.h" />
     <ClInclude Include="UserInterface\СlassInstanceCreator\LessonInScheduleCreator\SimpleLessonInScheduleCreator\SimpleLessonInScheduleCreator.h" />

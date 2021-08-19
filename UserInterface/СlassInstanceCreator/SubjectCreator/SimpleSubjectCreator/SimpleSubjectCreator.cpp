@@ -1,12 +1,13 @@
 #include "SimpleSubjectCreator.h"
 
-SimpleSubjectCreator::SimpleSubjectCreator(VectorWithQuestionNotifier<Teacher*>& teacherList) :
+SimpleSubjectCreator::SimpleSubjectCreator(VectorWithNotifier<Teacher*>& teacherList) :
 	ÑlassInstanceCreatorAncestor
 	({
-		Question("Subject name", Question::enterableByUser),
-		Question("Teacher in this subject", Question::existing, teacherList),
-		Question("Custom nama of this object", Question::enterableByUser)
-	})
+		new QuestionWithAnswerEnterableByUser("Subject name"),
+		new QuestionWithExistingAnswer("Teacher in this subject", teacherList),
+		new QuestionWithAnswerEnterableByUser("Custom nama of this object")
+	}),
+	teacherList{ teacherList }
 {
 }
 
@@ -15,23 +16,23 @@ void* SimpleSubjectCreator::create() const
 	return static_cast<void*>(new SimpleSubject(subjectName, *teacher, customClassName));
 }
 
-void SimpleSubjectCreator::setAnswer(const short& index, void* answer)
+void SimpleSubjectCreator::setAnswer(const short& index, const std::string& answer)
 {
 	switch (index)
 	{
 	case 0 :
 	{
-		subjectName = *static_cast<std::string*>(answer);
+		subjectName = answer;
 		break;
 	}
 	case 1:
 	{
-		teacher = static_cast<Teacher*>(answer);
+		teacher = teacherList[std::atoi(answer.c_str())];
 		break;
 	}
 	case 2:
 	{
-		customClassName = *static_cast<std::string*>(answer);
+		customClassName = answer;
 		break;
 	}
 	}

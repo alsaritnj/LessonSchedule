@@ -8,15 +8,36 @@ SimpleLessonInSchedule::SimpleLessonInSchedule(Subject& subject, Classroom& clas
 	_customClassName = customClassName;
 }
 
-const Teacher& SimpleLessonInSchedule::getTeacher() const { return subject->getTeacher(); }
-std::string SimpleLessonInSchedule::getSubjectName() const { return subject->getSubjectName(); }
-std::string SimpleLessonInSchedule::getClassroomNumber() const { return classroom->getClassroomNumber(); }
-short int SimpleLessonInSchedule::getNumberInSchedule() const { return numberInSchedule; }
+const Teacher& SimpleLessonInSchedule::getTeacher() const 
+{ 
+	return subject->getTeacher(); 
+}
+std::string SimpleLessonInSchedule::getSubjectName() const 
+{ 
+	return subject->getSubjectName(); 
+}
+std::string SimpleLessonInSchedule::getClassroomNumber() const 
+{ 
+	return classroom->getClassroomNumber(); 
+}
+short int SimpleLessonInSchedule::getNumberInSchedule() const
+{ 
+	return numberInSchedule;
+}
 
-void SimpleLessonInSchedule::setTeacher(Teacher& teacher) { this->subject->setTeacher(teacher); }
-void SimpleLessonInSchedule::setSubjectName(const std::string& subjectName) { this->subject->setSubjectName(subjectName); }
-void SimpleLessonInSchedule::setClassroomNumber(Classroom& classroom) { this->classroom = &classroom; }
-void SimpleLessonInSchedule::setNumberInSchedule(const short int& numberInSchedule) { this->numberInSchedule = numberInSchedule; }
+void SimpleLessonInSchedule::setSubject(Subject& subject)
+{
+	this->subject = &subject;
+}
+void SimpleLessonInSchedule::setClassroom(Classroom& classroom) 
+{ 
+	this->classroom = &classroom; 
+}
+
+void SimpleLessonInSchedule::setNumberInSchedule(const short int& numberInSchedule)
+{
+	this->numberInSchedule = numberInSchedule;
+}
 
 std::string SimpleLessonInSchedule::className() const
 {

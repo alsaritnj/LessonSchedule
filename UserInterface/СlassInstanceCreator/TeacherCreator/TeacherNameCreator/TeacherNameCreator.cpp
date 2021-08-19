@@ -3,10 +3,10 @@
 TeacherNameCreator::TeacherNameCreator() :
 	ÑlassInstanceCreatorAncestor
 	({
-		Question("Surname of teacher", Question::enterableByUser),
-		Question("Name of teacher", Question::enterableByUser),
-		Question("Patronymic of teacher", Question::enterableByUser),
-		Question("Custom nama of this object", Question::enterableByUser)
+		new QuestionWithAnswerEnterableByUser("Surname of teacher"),
+		new QuestionWithAnswerEnterableByUser("Name of teacher"),
+		new QuestionWithAnswerEnterableByUser("Patronymic of teacher"),
+		new QuestionWithAnswerEnterableByUser("Custom nama of this object")
 	})
 {
 }
@@ -16,9 +16,9 @@ void* TeacherNameCreator::create() const
 	return new TeacherName(answers[0], answers[1], answers[2], answers[3]);
 }
 
-void TeacherNameCreator::setAnswer(const short& index, void* answer)
+void TeacherNameCreator::setAnswer(const short& index, const std::string& answer)
 {
-	answers[index] = *static_cast<std::string*>(answer);
+	answers[index] = answer;
 }
 
 std::string TeacherNameCreator::nameOfCreatableClass() const

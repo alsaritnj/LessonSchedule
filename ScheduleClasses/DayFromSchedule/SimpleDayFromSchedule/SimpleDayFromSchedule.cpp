@@ -1,6 +1,6 @@
 #include "SimpleDayFromSchedule.h"
 
-SimpleDayFromSchedule::SimpleDayFromSchedule(std::initializer_list<LessonInSchedule*> lessonsInSchedule, const std::string& customClassName)
+SimpleDayFromSchedule::SimpleDayFromSchedule(std::initializer_list<const LessonInSchedule*> lessonsInSchedule, const std::string& customClassName)
 {
 	_customClassName = customClassName;
 	this->lessonsInSchedule.reserve(lessonsInSchedule.size());
@@ -28,10 +28,10 @@ const LessonInSchedule& SimpleDayFromSchedule::operator[](const unsigned int& nu
 		return **temp;
 }
 
-void SimpleDayFromSchedule::add(LessonInSchedule* added)
+void SimpleDayFromSchedule::add(const LessonInSchedule& added)
 {
 	for (const auto& el : lessonsInSchedule)
-		if (el->getNumberInSchedule() == added->getNumberInSchedule())
+		if (el->getNumberInSchedule() == added.getNumberInSchedule())
 			throw(std::exception("a lesson with the same number in the schedule as you tried to add already exists"));
 	lessonsInSchedule.emplace_back(added);
 	std::sort(this->lessonsInSchedule.begin(), this->lessonsInSchedule.end());
@@ -48,7 +48,10 @@ void SimpleDayFromSchedule::del(const unsigned int& numberOfLessonInSchedule)
 	lessonsInSchedule.erase(lessonsInSchedule.begin() + (numberOfLessonInSchedule - 1));
 }
 
-unsigned SimpleDayFromSchedule::countOfLessons() const { return lessonsInSchedule.size(); }
+unsigned SimpleDayFromSchedule::countOfLessons() const 
+{ 
+	return lessonsInSchedule.size(); 
+}
 
 std::string SimpleDayFromSchedule::className() const
 {

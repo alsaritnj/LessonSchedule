@@ -5,19 +5,6 @@
 
 void ConsoleUserInterface::interactWithUser()
 {
-	std::cin >> userInput;
-	if (userInput == "showschedule")
-	{
-		printSchedule();
-	}
-	else if (userInput == "create")
-	{
-		create();
-	}
-	else if (userInput == "t")
-	{
-		std::cout << teachers[0]->getName() << " " << teachers[0]->getSurname() << " " << teachers[0]->getPatronymic() << std::endl;
-	}
 	
 }
 
