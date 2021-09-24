@@ -7,13 +7,13 @@ class SimpleLessonInSchedule : public LessonInSchedule
 {
 public:
 	SimpleLessonInSchedule(Subject& subject, Classroom& classroom, const short unsigned int& numberInSchedule, const std::string& customClassName = "");
-	const Teacher& getTeacher() const;
-	std::string getSubjectName() const;
-	std::string getClassroomNumber() const;
-	short int getNumberInSchedule() const;
-	void setSubject(Subject& subject);
-	void setClassroom(Classroom& classroom);
-	void setNumberInSchedule(const short int& numberInSchedule);
+	const Teacher& getTeacher() const override;
+	std::string getSubjectName() const override;
+	std::string getClassroomNumber() const override;
+	short int getNumberInSchedule() const override;
+	void setSubject(Subject& subject) override;
+	void setClassroom(Classroom& classroom) override;
+	void setNumberInSchedule(const short int& numberInSchedule) override;
 
 	std::string className() const override;
 	std::string classContent() const override;

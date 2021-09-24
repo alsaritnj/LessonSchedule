@@ -1,183 +1,88 @@
 #include <iostream>
+#include <Windows.h>
 using namespace std;
 
-#include "UserInterface/СlassInstanceCreator/TeacherCreator/TeacherInitialsNameCreator/TeacherInitialsNameCreator.h"
-#include "UserInterface/СlassInstanceCreator/LessonInScheduleCreator/SimpleLessonInScheduleCreator/SimpleLessonInScheduleCreator.h"
-#include "ScheduleClasses/Subject/SimpleSubject/SimpleSubject.h"
-#include "ScheduleClasses/Classroom/SimpleClassroom/SimpleClassroom.h"
-#include "ScheduleClasses/Teacher/TeacherName/TeacherName.h"
-#include "UserInterface/СlassInstanceCreator/SubjectCreator/SimpleSubjectCreator/SimpleSubjectCreator.h"
-#include "UserInterface/СlassInstanceCreator/TeacherCreator/TeacherNameCreator/TeacherNameCreator.h"
-#include "UserInterface/СlassInstanceCreator/ClassroomCreator\SimpleClassroomCreator/SimpleClassroomCreator.h"
-#include "UserInterface/VectorOfClassNameObserver/VectorWithNotifier.h"
-
-VectorWithNotifier<Classroom*> classrooms;
-VectorWithNotifier<Teacher*> teachers;
-VectorWithNotifier<Subject*> subjects;
-VectorWithNotifier<LessonInSchedule*> lessons;
-
-vector<СlassInstanceCreator*> creators
-{
-	new SimpleClassroomCreator(),
-	new TeacherNameCreator(),
-	new TeacherInitialsNameCreator(),
-	new SimpleSubjectCreator(teachers),
-	new SimpleLessonInScheduleCreator(subjects, classrooms)
-};
-
-void add()
-{
-	string input;
-	int index;
-	cout << "What you want to create?:" << endl;
-	for (size_t i = 0; i < creators.size(); i++)
-	{
-		cout << i << ". " << creators[i]->nameOfCreatableClass() << endl;
-	}
-	cin >> index;
-	СlassInstanceCreator* creator = creators[index];
-	for (size_t i = 0; i < creator->getCountOfQuestions(); i++)
-	{
-		cout << creator->getQuestion(i).getQuestion() << ": ";
-		cin >> input;
-		creator->setAnswer(i, input);
-	}
-	cout << "kuda?" << endl;
-	cout << "0. Classroom" << endl;
-	cout << "1. Teacher" << endl;
-	cout << "2. Subject" << endl;
-	cout << "3. LessonInSchedule" << endl;
-	cin >> index;
-	switch (index)
-	{
-	case 0:
-	{
-		classrooms.addBackAndNotify(static_cast<Classroom*>(creator->create()));
-		break;
-	}
-	case 1:
-	{		
-		teachers.addBackAndNotify(static_cast<Teacher*>(creator->create()));
-		break;
-	}
-	case 2:
-	{
-		subjects.addBackAndNotify(static_cast<Subject*>(creator->create()));
-		break;
-	}
-	case 3:
-	{		
-		lessons.addBackAndNotify(static_cast<LessonInSchedule*>(creator->create()));
-		break;
-	}
-	}
-}
-
-void print()
-{
-	int index;
-	cout << "chto?" << endl;
-	cout << "0. Classroom" << endl;
-	cout << "1. Teacher" << endl;
-	cout << "2. Subject" << endl;
-	cout << "3. LessonInSchedule" << endl;
-	cin >> index;
-	switch (index)
-	{
-	case 0:
-	{
-		for (auto el : classrooms)
-		{
-			cout << "CLASS NAME:  " << el->className() << " \nCLASS CONTENT: " << el->classContent() << " \n CUSTOM CLASS NAME: " << el->customClassName() << endl;
-		}
-		break;
-	}
-	case 1:
-	{
-		for (auto el : teachers)
-		{
-			cout << "CLASS NAME:  " << el->className() << " \nCLASS CONTENT: " << el->classContent() << " \n CUSTOM CLASS NAME: " << el->customClassName() << endl;
-		}
-		break;
-	}
-	case 2:
-	{
-		for (auto el : subjects)
-		{
-			cout << "CLASS NAME:  " << el->className() << " \nCLASS CONTENT: " << el->classContent() << " \n CUSTOM CLASS NAME: " << el->customClassName() << endl;
-		}
-		break;
-	}
-	case 3:
-	{
-		
-		for (auto el : lessons)
-		{
-			cout << "CLASS NAME:  " << el->className() << " \nCLASS CONTENT: " << el->classContent() << " \n CUSTOM CLASS NAME: " << el->customClassName() << endl;
-		}
-		break;
-	}
-	}
-}
+#include "UserInterface/UserInterface/ConsoleUserInterface/ConsoleUserInterface.h"
+#include "UserInterface/FileSaver/FileSaverInString/FileSaverInString.h"
 
 int main()
 {
-	while (true)
+	/*vector<Teacher*> tchs
 	{
-		system("cls");
-		int a;
-		cin >> a;
-		switch (a)
+		new TeacherName("name", "sur", "pat"),
+		new TeacherName("name", "sur", "pat"),
+		new TeacherName("name", "sur", "pat"),
+		new TeacherName("name", "sur", "pat"),
+		new TeacherName("name", "sur", "pat")
+	};
+	
+	
+	vector<Subject*> v
+	{
+		new SimpleSubject("subjname", *tchs[1])
+	};
+	string tr = v[0]->classContent();
+	cout << v[0]->classContent() << endl;
+	return 0;
+	/*std::cout << tchs.front() << endl
+		<< tchs[0] << endl
+		<< v[0]->classContent() << endl;*\
+
+	stringstream strs;
+	string s;
+	strs << v[0]->classContent();
+	getline(strs, s, '_');
+	getline(strs, s, '_');
+	getline(strs, s, '_');
+	long long addressOfobj = stoll(s, nullptr, 16);
+
+	for (size_t i = 0; i < tchs.size(); i++)
+	{
+		strs.clear();
+		strs << tchs[i];
+		getline(strs, s);
+		if (addressOfobj == stoll(s, nullptr, 16))
 		{
-			case 1:
-			{
-				add();
-				break;
-			}
-			case 2:
-			{
-				print();
-				system("pause");
-				break;
-			}
-			case 3: 
-			{
-				for (auto el : creators)
-				{
-					delete el;
-				}
-				return 0;
-			}
+			cout << i << endl;
+			break;
 		}
 	}
 
-
-	/*СlassInstanceCreator* creator;
-	creator = new SimpleClassroomCreator;
-
-	string input;
-
-	for (size_t i = 0; i < creator->getCountOfQuestions(); i++)
+	return 0;*/
+	vector<Teacher*> tchs
 	{
-		if (creator->getQuestion(i).typeOfAnswer() == Question::enterableByUser)
-		{
-			cout << creator->getQuestion(i).question() << ": ";
-			cin >> input;
-			creator->setAnswer(i, &input);
-		}
-		else if (creator->getQuestion(i).typeOfAnswer() == Question::existing)
-		{
+		new TeacherName("name1", "sur1", "pat1"),
+		new TeacherName("name2", "sur2", "pat2"),
+		new TeacherName("name3", "sur3", "pat3"),
+		new TeacherName("name4", "sur4", "pat4"),
+		new TeacherName("name5", "sur5", "pat5")
+	};
 
-		}
-	}
+	vector<Classroom*> clrms
+	{
+		new SimpleClassroom(1),
+		new SimpleClassroom(2),
+		new SimpleClassroom(3),
+	};
 
-	SimpleClassroom* sc = static_cast<SimpleClassroom*>(creator->create());
+	vector<Subject*> subj
+	{
+		new SimpleSubject("subjname1", *tchs[0]),
+		new SimpleSubject("subjname2", *tchs[2]),
+		new SimpleSubject("subjname3", *tchs[1]),
+		new SimpleSubject("subjname2", *tchs[3]),
+		new SimpleSubject("subjname2", *tchs[4]),
+		new SimpleSubject("subjname2", *tchs[0])
+	};
 
-	cout << sc->className() << " \t" << sc->classContent() << " \t" << sc->customClassName() << " \t" << sc->getClassroomNumber() << endl;
+	FiveDaySchedule sch;
 
-	delete creator;
-	delete sc;*/
+	FileSaverInString saver;
+	saver.saveAs("test.txt", tchs, clrms, subj, &sch);
 
+	return 0;
+	ConsoleUserInterface CUI;
+	CUI.interactWithUser();
 	return 0;
 }
 
@@ -193,4 +98,26 @@ int main()
 * question.cpp ctor of copy
 * 
 * возможно в VectorWithQuestionNotifier нужны конструкторы копирования и перемешения
+* 
+* в SimpleDayFromSchedule добавить конструктор с списком LessonInSchedule
+* 
+* в LessonInShcedule добавить конструкторы копирования и перемещения
+* 
+* переименовать LessonInSchedule, DayFromSchedule и постораться все, где есть Simple
+* 
+*  creator->getQuestion(i).getQuestion() ты че дурак? зачем два раза getQuestion? убери наверное, если это не нажл
+* 
+* попробуй убрать небольшое повторение кода в методах showTeacher, showClassrooms, showsubjects из CUI
+* 
+* FiveDaySchedule classContent
+* 
+* указатели на функции в CUI
+* 
+* проверить ВСЕ на соответвие с SOLID и остальными принципами
+* 
+* сделать так чтоб юаи при вводе пользователем \ писали \\
+* 
+* в teacher initials name какойто гавнокод // upd да там параша такя шо лучше его нахуй снести
+* 
+* в filesaverinstring много много чего
 */

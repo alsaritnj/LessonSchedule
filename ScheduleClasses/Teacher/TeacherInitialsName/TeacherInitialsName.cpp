@@ -1,7 +1,7 @@
 #include "TeacherInitialsName.h"
 
 TeacherInitialsName::TeacherInitialsName(const std::string& surname,const std::string& name, const std::string& patronymic, const std::string& customClassName) :
-	teacherName{surname, name, patronymic},
+	teacherName{surname, name, patronymic, customClassName},
 	initialsName { name[0], '.' },
 	initialsPatronymic{patronymic[0], '.'}
 {
@@ -55,10 +55,10 @@ void TeacherInitialsName::setPatronymic(const std::string& patronymic)
 
 std::string TeacherInitialsName::className() const
 {
-	return "Teacher initials name";
+	return "TeacherInitialsName";
 }
 
 std::string TeacherInitialsName::classContent() const
 {
-	return "Teacher content:\n\tSurname - " + teacherName.getSurname() + "\n\tName initial - " + initialsName + "\n\tPatronymic initial - " + initialsPatronymic;;
+	return teacherName.classContent();
 }

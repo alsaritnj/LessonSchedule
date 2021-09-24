@@ -147,6 +147,7 @@
     <ClCompile Include="ScheduleClasses\Teacher\TeacherInitialsName\TeacherInitialsName.cpp" />
     <ClCompile Include="ScheduleClasses\Teacher\TeacherName\TeacherName.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="UserInterface\FileSaver\FileSaverInString\FileSaverInString.cpp" />
     <ClCompile Include="UserInterface\Question\QuestionWithAnswerEnterableByUser\QuestionWithAnswerEnterableByUser.cpp" />
     <ClCompile Include="UserInterface\Question\QuestionWithExistingAnswer\QuestionWithExistingAnswer.cpp" />
     <ClCompile Include="UserInterface\UserInterface\ConsoleUserInterface\ConsoleUserInterface.cpp" />
@@ -176,6 +177,9 @@
     <ClInclude Include="ScheduleClasses\Subject\SimpleSubject\SimpleSubject.h" />
     <ClInclude Include="ScheduleClasses\Teacher\TeacherInitialsName\TeacherInitialsName.h" />
     <ClInclude Include="ScheduleClasses\Teacher\TeacherName\TeacherName.h" />
+    <ClInclude Include="UserInterface\FileSaver\FileSaverInString\FileSaverInString.h" />
+    <ClInclude Include="UserInterface\interface\FileOpener.h" />
+    <ClInclude Include="UserInterface\interface\FileSaver.h" />
     <ClInclude Include="UserInterface\interface\Question.h" />
     <ClInclude Include="UserInterface\interface\UserInterface.h" />
     <ClInclude Include="UserInterface\interface\СlassInstanceCreator.h" />

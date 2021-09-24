@@ -31,10 +31,10 @@ std::string SimpleClassroom::getClassroomNumber() const
 
 std::string SimpleClassroom::className() const
 {
-	return "Simple classroom";
+	return "SimpleClassroom";
 }
 
 std::string SimpleClassroom::classContent() const
 {
-	return "Classroom content:\n\tNumber - " + classroomNumber;
+	return classroomNumber + ' ' + _customClassName;
 }

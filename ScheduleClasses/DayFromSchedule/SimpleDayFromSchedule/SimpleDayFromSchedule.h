@@ -1,17 +1,20 @@
 #pragma once
 #include "../../interfaces/DayFromSchedule.h"
 #include <vector>
-#include <initializer_list>
 #include <algorithm>
 #include <exception>
+#include <string>
 
 class SimpleDayFromSchedule : public DayFromSchedule
 {
 public:
-	SimpleDayFromSchedule(std::initializer_list<const LessonInSchedule*> lessonsInSchedule, const std::string& customClassName = "");
+	SimpleDayFromSchedule(const std::string& customClassName = "");
 	~SimpleDayFromSchedule();
-	const LessonInSchedule& operator[](const unsigned int& numberOfLessonInSchedule) override;
-	void add(const LessonInSchedule& added) override;
+	const LessonInSchedule& operator[](const unsigned int& numberOfLessonInSchedule) const override;
+	LessonInSchedule& operator[](const unsigned int& numberOfLessonInSchedule) override;
+	const LessonInSchedule& getLessonByIndex(const unsigned int& index) const ;
+	LessonInSchedule& getLessonByIndex(const unsigned int& index);
+	void add(LessonInSchedule* added) override;
 	void del(const unsigned int& numberOfLessonInSchedule) override;
 	unsigned countOfLessons() const override;
 
@@ -20,4 +23,9 @@ public:
 
 protected:
 	std::vector<LessonInSchedule*> lessonsInSchedule{};
+
+private:
+	LessonInSchedule* getLessonByNumber(const unsigned int& numberOfLessonInSchedule) const;
+	void throwExceptionIfExistLessonWithNumber(const unsigned int& numberOfLessonInSchedule) const;// хз зачем оно надо
+
 };

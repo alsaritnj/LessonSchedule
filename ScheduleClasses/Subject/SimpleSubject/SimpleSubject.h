@@ -16,5 +16,5 @@ public:
 	std::string classContent() const override;
 protected:
 	std::string subjectName{};
-	const Teacher* teacher;
+	const Teacher* teacher;// не должен быть когнстантным наверное просто а зачем
 };

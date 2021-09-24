@@ -119,6 +119,18 @@
     <Filter Include="Исходные файлы\UserInterface\VectorOfClassNameObserver">
       <UniqueIdentifier>{a0ad35b8-a769-4a47-ba24-891bc55292fe}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\UserInterface\FileSaver">
+      <UniqueIdentifier>{a94da5c4-caaa-4ac7-8d7d-e27400659def}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\UserInterface\FileOpener">
+      <UniqueIdentifier>{7facfa6f-b0c7-410f-8bf4-cc228cf35ab3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\UserInterface\FileOpener\StringBuffFileOpener">
+      <UniqueIdentifier>{98264f38-0016-4bdd-9b69-c0389e20498f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\UserInterface\FileSaver\FileSaverInString">
+      <UniqueIdentifier>{447e5430-cdfd-4864-aa9c-a71d3ab3c517}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp">
@@ -183,6 +195,9 @@
     </ClCompile>
     <ClCompile Include="UserInterface\VectorOfClassNameObserver\NotifierForAnVectorOfClassName.cpp">
       <Filter>Исходные файлы\UserInterface\VectorOfClassNameObserver</Filter>
+    </ClCompile>
+    <ClCompile Include="UserInterface\FileSaver\FileSaverInString\FileSaverInString.cpp">
+      <Filter>Исходные файлы\UserInterface\FileSaver\FileSaverInString</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -281,6 +296,15 @@
     </ClInclude>
     <ClInclude Include="UserInterface\VectorOfClassNameObserver\VectorWithNotifier.h">
       <Filter>Исходные файлы\UserInterface\VectorOfClassNameObserver</Filter>
+    </ClInclude>
+    <ClInclude Include="UserInterface\interface\FileSaver.h">
+      <Filter>Исходные файлы\UserInterface\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="UserInterface\interface\FileOpener.h">
+      <Filter>Исходные файлы\UserInterface\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="UserInterface\FileSaver\FileSaverInString\FileSaverInString.h">
+      <Filter>Исходные файлы\UserInterface\FileSaver\FileSaverInString</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

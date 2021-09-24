@@ -41,12 +41,14 @@ void SimpleLessonInSchedule::setNumberInSchedule(const short int& numberInSchedu
 
 std::string SimpleLessonInSchedule::className() const
 {
-	return "Simple lessom in schedule";
+	return "SimpleLessonInSchedule";
 }
 
 std::string SimpleLessonInSchedule::classContent() const
 {
-	return "Lesson in schedule content:\n\t" + subject->classContent() + "\n\t" + classroom->classContent() + "\n\tNumberInSchedule - " + std::to_string(numberInSchedule);
+	std::stringstream result;
+	result << EscSequenceToClassPtr << "_subject_" << subject << EscSequenceToClassPtr << "_classroom_" << classroom << ' ' << numberInSchedule << ' ' << _customClassName;
+	return result.str();
 }
 
 bool SimpleLessonInSchedule::operator>(const LessonInSchedule& other) const { return this->numberInSchedule > other.getNumberInSchedule(); }

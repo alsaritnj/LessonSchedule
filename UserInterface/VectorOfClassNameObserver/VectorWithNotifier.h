@@ -10,7 +10,7 @@ public:
 	VectorWithNotifier(std::vector<T>&& vector);
 	void addAndNotify(const unsigned& index, T&& value);
 	void addBackAndNotify(T&& value);
-	void dellAndNotify(const unsigned& index);
+	void delAndNotify(const unsigned& index);
 
 protected:
 	void notify();
@@ -48,9 +48,9 @@ inline void VectorWithNotifier<T>::addBackAndNotify(T&& value)
 }
 
 template<typename T>
-inline void VectorWithNotifier<T>::dellAndNotify(const unsigned& index)
+inline void VectorWithNotifier<T>::delAndNotify(const unsigned& index)
 {
-	this->erase(index);
+	this->erase(this->begin() + index);
 	notify();
 }
 

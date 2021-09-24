@@ -5,12 +5,40 @@
 
 void ConsoleUserInterface::interactWithUser()
 {
-	
+	while (true)
+	{
+		std::cin >> stringUserInput;
+		//namesFunction.find(stringUserInput)->second();
+		if (stringUserInput == "showSchedule")
+			showSchedule();
+		else if (stringUserInput == "showTeachers")
+			showTeachers();
+		else if (stringUserInput == "showClassrooms")
+			showClassrooms();
+		else if (stringUserInput == "showSubjects")
+			showSubjects();
+		else if (stringUserInput == "addTeacher")
+			addTeacher();
+		else if (stringUserInput == "addClassroom")
+			addClassroom();
+		else if (stringUserInput == "addSubject")
+			addSubject();
+		else if (stringUserInput == "addLesson")
+			addLesson();
+		else if (stringUserInput == "delTeacher")
+			delTeacher();
+		else if (stringUserInput == "delClassroom")
+			delClassroom();
+		else if (stringUserInput == "delSubject")
+			delSubject();
+		else if (stringUserInput == "clear")
+			system("cls");
+	}
 }
 
 ConsoleUserInterface::ConsoleUserInterface()
 {
-	schedule = new Sch;
+	schedule = new FiveDaySchedule;
 }
 
 ConsoleUserInterface::~ConsoleUserInterface()
@@ -18,79 +46,97 @@ ConsoleUserInterface::~ConsoleUserInterface()
 	delete schedule;
 }
 
-void ConsoleUserInterface::printSchedule()
+
+void ConsoleUserInterface::showSchedule()
 {
 	DayFromSchedule* tempDay;
-	const LessonInSchedule* tempLesson;
+	LessonInSchedule* tempLesson;
 	for (size_t i = 1; i <= schedule->getCountOfDay(); i++)
 	{
-		std::cout << schedule->getNameOfDay(i) << std::endl;
 		tempDay = &schedule->operator[](i);
-		for (size_t j = 1; j <= tempDay->countOfLessons(); j++)
+		std::cout << tempDay->customClassName() << std::endl;
+		for (size_t j = 0; j < schedule->operator[](i).countOfLessons(); j++)
 		{
-			try
-			{
-				tempLesson = &tempDay->operator[](j);
-			}
-			catch (const std::exception&)
-			{
-				continue;
-			}			
-			std::cout << j << ' ' << tempLesson->getSubjectName() << '\t'
-				<< tempLesson->getTeacher().getSurname() << ' ' << tempLesson->getTeacher().getName() << ' '
-				<< tempLesson->getTeacher().getPatronymic() << '\t' << tempLesson->getClassroomNumber() << std::endl;
+			tempLesson = &tempDay->getLessonByIndex(j);
+			std::cout << tempLesson->getNumberInSchedule() << ". " << tempLesson->getSubjectName() << " "
+				<< tempLesson->getTeacher().getSurname() << " " << tempLesson->getTeacher().getName() << " "
+				<< tempLesson->getTeacher().getPatronymic() << " " << tempLesson->getClassroomNumber() << std::endl;
 		}
 	}
 }
 
-void ConsoleUserInterface::printSchedule(int numberOfDay)
+void ConsoleUserInterface::showTeachers()
 {
+	for (size_t i = 0; i < teachers.size(); i++)
+	{
+		std::cout << i + 1 << ". " << *teachers[i] << std::endl;
+	}
 }
 
-void ConsoleUserInterface::create()
+void ConsoleUserInterface::showClassrooms()
 {
-	//удалить наверное наддо но потом
-	/*std::cout << "What do you want to create?\n"
-		<< "1 Classroom\n" << "2 Teacher\n" << "3 Subject\n" << "4Lesson\n";
-	std::cin >> userInput;
-	switch (atoi(userInput.c_str()))
+	for (size_t i = 0; i < classrooms.size(); i++)
 	{
-	case(1):
-		{
-			std::cout << "creating classroom...\n";
-		}
-		break;
-	case(2):
-		{
-			std::cout << "What type of teacher you want to create?\n" << "1 TeacherName\n";
-			std::cin >> userInput;
-			switch (atoi(userInput.c_str()))
-			{
-			case(1):
-				{
-					TeacherNameCreator tnc;
-					for (size_t i = 0; i < tnc.getCountOfParameters(); i++)
-					{
-						std::cout << tnc.getQuestion(i) << std::endl;
-						std::cin >> userInput;
-						tnc.setParameter(i, &userInput);
-					}
-					teachers.emplace_back(static_cast<TeacherName*>(tnc.create()));
-					break;
-				}
-			}
-			break;
-		}
-	case(3):
-		{
-			std::cout << "creating subject...\n";
-			break;
-		}
-	case(4):
-		{
-			std::cout << "creating lesson...\n";
-			break;
-		}
-	}*/
-	
+		std::cout << i + 1 << ". " << classrooms[i]->getClassroomNumber() << " " << classrooms[i]->className() << std::endl;
+	}
+}
+
+void ConsoleUserInterface::showSubjects()
+{
+	for (size_t i = 0; i < subjects.size(); i++)
+	{
+		std::cout << i + 1 << ". " << subjects[i]->getSubjectName() << std::endl;
+	}
+}
+
+
+void ConsoleUserInterface::addTeacher()
+{
+	teachers.addBackAndNotify(craeteUsingClassInstanceCreator<Teacher>(teacherCreators));
+}
+
+void ConsoleUserInterface::addClassroom()
+{
+	classrooms.addBackAndNotify(craeteUsingClassInstanceCreator<Classroom>(classroomCreators));
+}
+
+void ConsoleUserInterface::addSubject()
+{
+	subjects.addBackAndNotify(craeteUsingClassInstanceCreator<Subject>(subjectCreators));
+}
+
+void ConsoleUserInterface::addLesson()
+{
+	LessonInSchedule* lesson = craeteUsingClassInstanceCreator<LessonInSchedule>(lessonCreators);
+	std::cout << "On what day should I add this lesson?" << std::endl;
+	std::cin >> intUserInput;
+	schedule->addLessonInTheDay(intUserInput, lesson);
+}
+
+
+void ConsoleUserInterface::delTeacher()
+{
+	std::cout << "What teacher you want to delete?" << std::endl;
+	showTeachers();
+	std::cin >> intUserInput;
+	teachers.delAndNotify(intUserInput - 1);
+	//delFromList("teacher", showTeachers, teachers);
+}
+
+void ConsoleUserInterface::delClassroom()
+{
+	std::cout << "What classroom you want to delete?" << std::endl;
+	showClassrooms ();
+	std::cin >> intUserInput;
+	classrooms.delAndNotify(intUserInput - 1);
+	//delFromList("classroom", showClassrooms, classrooms);
+}
+
+void ConsoleUserInterface::delSubject()
+{
+	std::cout << "What subject you want to delete?" << std::endl;
+	showSubjects();
+	std::cin >> intUserInput;
+	subjects.delAndNotify(intUserInput - 1);
+	//delFromList("subject", showSubjects, subjects);
 }

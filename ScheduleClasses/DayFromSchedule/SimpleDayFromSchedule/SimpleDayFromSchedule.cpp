@@ -1,12 +1,12 @@
 #include "SimpleDayFromSchedule.h"
 
-SimpleDayFromSchedule::SimpleDayFromSchedule(std::initializer_list<const LessonInSchedule*> lessonsInSchedule, const std::string& customClassName)
+SimpleDayFromSchedule::SimpleDayFromSchedule(const std::string& customClassName)
 {
 	_customClassName = customClassName;
-	this->lessonsInSchedule.reserve(lessonsInSchedule.size());
+	/*this->lessonsInSchedule.reserve(lessonsInSchedule.size());
 	for (auto& el : lessonsInSchedule)
 		this->lessonsInSchedule.emplace_back(el);
-	std::sort(this->lessonsInSchedule.begin(), this->lessonsInSchedule.end());
+	std::sort(this->lessonsInSchedule.begin(), this->lessonsInSchedule.end());*/
 }
 
 SimpleDayFromSchedule::~SimpleDayFromSchedule()
@@ -15,25 +15,32 @@ SimpleDayFromSchedule::~SimpleDayFromSchedule()
 		delete el;
 }
 
-const LessonInSchedule& SimpleDayFromSchedule::operator[](const unsigned int& numberOfLessonInSchedule)
+LessonInSchedule& SimpleDayFromSchedule::operator[](const unsigned int& numberOfLessonInSchedule)
 {
-	std::vector<LessonInSchedule*>::iterator temp = std::find_if(lessonsInSchedule.begin(), lessonsInSchedule.end(),
-		[numberOfLessonInSchedule](LessonInSchedule* a)
-		{
-			return numberOfLessonInSchedule == a->getNumberInSchedule();
-		});
-	if (temp == lessonsInSchedule.end())
-			throw std::exception("The lesson under the number that was passed does not exist");
-	else 
-		return **temp;
+	return *getLessonByNumber(numberOfLessonInSchedule);
 }
 
-void SimpleDayFromSchedule::add(const LessonInSchedule& added)
+const LessonInSchedule& SimpleDayFromSchedule::getLessonByIndex(const unsigned int& index) const
+{
+	return *lessonsInSchedule[index];
+}
+
+LessonInSchedule& SimpleDayFromSchedule::getLessonByIndex(const unsigned int& index)
+{
+	return *lessonsInSchedule[index];
+}
+
+const LessonInSchedule& SimpleDayFromSchedule::operator[](const unsigned int& numberOfLessonInSchedule) const
+{
+	return *getLessonByNumber(numberOfLessonInSchedule);
+}
+
+void SimpleDayFromSchedule::add(LessonInSchedule* added)
 {
 	for (const auto& el : lessonsInSchedule)
-		if (el->getNumberInSchedule() == added.getNumberInSchedule())
+		if (el->getNumberInSchedule() == added->getNumberInSchedule())
 			throw(std::exception("a lesson with the same number in the schedule as you tried to add already exists"));
-	lessonsInSchedule.emplace_back(added);
+	lessonsInSchedule.emplace_back(added);//ну исправь блин
 	std::sort(this->lessonsInSchedule.begin(), this->lessonsInSchedule.end());
 }
 
@@ -42,6 +49,8 @@ void SimpleDayFromSchedule::del(const unsigned int& numberOfLessonInSchedule)
 	//Ё……
 	//помоему оно не будет работать корректно, так как удал€те элемент по номерму в массиве, а не по номеру в расписании(по полю класса lessoninschedule)
 	//но возмножно € ощибаюсь так что проверь потом
+
+	/// upd. да, возможно такое, что иди бл€ тнахуй 
 	if (numberOfLessonInSchedule > lessonsInSchedule.size() + 1)
 		throw(std::exception("Too large number of the lesson in the schedule"));
 	delete lessonsInSchedule[numberOfLessonInSchedule - 1];
@@ -49,23 +58,35 @@ void SimpleDayFromSchedule::del(const unsigned int& numberOfLessonInSchedule)
 }
 
 unsigned SimpleDayFromSchedule::countOfLessons() const 
-{ 
+{
 	return lessonsInSchedule.size(); 
 }
 
 std::string SimpleDayFromSchedule::className() const
 {
-	return "Simple day from schedule";
+	return "SimpleDayFromSchedule";
 }
-
+#include<iostream>
 std::string SimpleDayFromSchedule::classContent() const
 {
-	std::string result;
-	result = "List of lessons in schedule";
-	for (size_t i = 0; i < lessonsInSchedule.size(); i++)
+	std::stringstream result;
+	for (auto el : lessonsInSchedule)
 	{
-		result += "\n" + std::to_string(i) + ". " + lessonsInSchedule[i]->classContent();
+		result << "\cl_lesson_" << el << ' ';
 	}
+	result << _customClassName;
+	return result.str();
+}
 
-	return result;
+LessonInSchedule* SimpleDayFromSchedule::getLessonByNumber(const unsigned int& numberOfLessonInSchedule) const
+{
+	auto temp = std::find_if(lessonsInSchedule.begin(), lessonsInSchedule.end(),
+		[numberOfLessonInSchedule](LessonInSchedule* a)
+		{
+			return numberOfLessonInSchedule == a->getNumberInSchedule();
+		});
+	if (temp == lessonsInSchedule.end())
+		throw std::exception("the lesson under the number that was passed does not exist");
+	else
+		return *temp;
 }

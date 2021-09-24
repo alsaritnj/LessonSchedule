@@ -1,5 +1,9 @@
 #pragma once
 #include <string>
+#include <typeinfo>
+#include <sstream>
+
+#define EscSequenceToClassPtr "&cl"//всегда должно быть 3 символа, а то получишь баг в FileSaverInString, нужно бы исправить
 
 // not really an interface, but it's better than repeating the code and giving care of the _customClassName field to another class
 

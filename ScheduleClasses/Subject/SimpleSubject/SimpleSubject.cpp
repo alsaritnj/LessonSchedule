@@ -29,10 +29,12 @@ void SimpleSubject::setTeacher(Teacher& teacher) { this->teacher = &teacher; }
 
 std::string SimpleSubject::className() const
 {
-	return "Simple subject";
+	return "SimpleSubject";
 }
 
 std::string SimpleSubject::classContent() const
 {
-	return "Subject content:\n\tSubject name - " + subjectName + "\n\t" + teacher->classContent();
+	std::stringstream result;
+	result << subjectName << ' ' << EscSequenceToClassPtr << "_teacher_" << teacher << ' ' << _customClassName;
+	return result.str();
 }

@@ -1,0 +1,17 @@
+teacher
+TeacherName sur1 name1 pat1
+TeacherName sur2 name2 pat2
+TeacherName sur3 name3 pat3
+TeacherName sur4 name4 pat4
+TeacherName sur5 name5 pat5
+classroom
+SimpleClassroom 1
+SimpleClassroom 2
+SimpleClassroom 3
+subject
+SimpleSubject subjname1 &cl_teacher_0
+SimpleSubject subjname2 &cl_teacher_2
+SimpleSubject subjname3 &cl_teacher_1
+SimpleSubject subjname2 &cl_teacher_3
+SimpleSubject subjname2 &cl_teacher_4
+SimpleSubject subjname2 &cl_teacher_0

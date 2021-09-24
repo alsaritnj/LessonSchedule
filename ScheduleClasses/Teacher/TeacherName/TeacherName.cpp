@@ -47,12 +47,12 @@ void TeacherName::setPatronymic(const std::string& patronymic)
 
 std::string TeacherName::className() const
 {
-	return "Teacher name";
+	return "TeacherName";
 }
 
 std::string TeacherName::classContent() const
 {
-	return "Teacher content:\n\tSurname - " + surname + "\n\tName - " + name + "\n\tPatronymic - " + patronymic;
+	return name + ' ' + surname + ' ' + patronymic + ' ' + _customClassName;
 }
 
 
